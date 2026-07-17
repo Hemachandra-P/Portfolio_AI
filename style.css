@@ -1587,6 +1587,17 @@ a:active {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+    .research-info{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+}
+
+.research-chip{
+    flex:1 1 140px;
+    max-width:170px;
+}
 }
 
 .hero-content {

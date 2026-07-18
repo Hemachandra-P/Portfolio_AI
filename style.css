@@ -2760,18 +2760,25 @@ position:relative;
 
 #progressBar{
 
-height:100%;
+    width:100%;
 
-width:0;
+    height:100%;
 
-background:
-linear-gradient(
-90deg,
-#00d4ff,
-#7c5cff,
-#00ffd5);
+    background:linear-gradient(
+        90deg,
+        #00d4ff,
+        #7c5cff,
+        #00ffd5
+    );
 
-position:relative;
+    position:relative;
+
+    transform:scaleX(0);
+    transform-origin:left center;
+
+    will-change:transform;
+
+    transition:transform .05s linear;
 
 }
 

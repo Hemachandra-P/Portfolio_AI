@@ -2531,32 +2531,32 @@ from{transform:rotate(0deg) translateX(-150px);}
 to{transform:rotate(360deg) translateX(-150px);}
 
 }
-/* ==========================================================
-   JARVIS LOADER - PART 2
-========================================================== */
-
 /* =======================
-   TERMINAL
+   GLASS TERMINAL
 ======================= */
 
 #terminal{
     position:relative;
     overflow:hidden;
-    background:rgba(8,18,40,.45);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
 
-    border:1px solid rgba(0,255,255,.18);
+    width:100%;
 
-    border-radius:18px;
+    background:rgba(8,18,40,.12);
+
+    backdrop-filter:blur(14px) saturate(180%);
+    -webkit-backdrop-filter:blur(14px) saturate(180%);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:22px;
 
     box-shadow:
-        0 0 50px rgba(0,255,255,.08),
-        inset 0 0 40px rgba(124,92,255,.08);
+        0 15px 45px rgba(0,0,0,.35),
+        inset 0 0 35px rgba(255,255,255,.03),
+        0 0 35px rgba(0,255,255,.08);
 
     padding:0;
 }
-
 /* terminal glow */
 
 #terminal::before{
@@ -2569,15 +2569,15 @@ to{transform:rotate(360deg) translateX(-150px);}
 
     background:
     linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,.05),
-    transparent
+        135deg,
+        rgba(255,255,255,.10) 0%,
+        rgba(255,255,255,.04) 20%,
+        transparent 45%,
+        transparent 100%
     );
 
-    transform:translateX(-100%);
+    pointer-events:none;
 
-    animation:terminalShine 4s infinite;
 }
 
 .terminal-header{

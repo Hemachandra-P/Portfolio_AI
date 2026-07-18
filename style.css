@@ -3475,32 +3475,28 @@ top:105%;
 
 .cursor-glow{
     position:fixed;
-    top:0;
-    left:0;
-
-    width:220px;
-    height:220px;
-
+    width:250px;
+    height:250px;
     border-radius:50%;
-    pointer-events:none;
-    z-index:999;
 
-    background:
-        radial-gradient(circle,
-            rgba(124,92,255,.18) 0%,
-            rgba(0,229,255,.10) 35%,
-            transparent 70%);
+    pointer-events:none;
+
+    left:0;
+    top:0;
 
     transform:translate(-50%,-50%);
-    transition:
-        transform .08s linear,
-        opacity .2s ease;
 
-    opacity:.8;
+    background:radial-gradient(circle,
+        rgba(124,92,255,.25) 0%,
+        rgba(0,229,255,.18) 35%,
+        rgba(124,92,255,.08) 60%,
+        transparent 80%);
 
-    mix-blend-mode:screen;
+    filter:blur(45px);
 
-    filter:blur(35px);
+    z-index:999999;
+
+    opacity:1;
 }
 @media (hover:none){
 

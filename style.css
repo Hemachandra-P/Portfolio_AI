@@ -627,10 +627,20 @@ nav.scrolled {
     position:relative;
     overflow:visible;
 
-    background:rgba(255,255,255,.06);
+    background:
+        linear-gradient(
+            90deg,
+            #7c5cff,
+            #00e5ff,
+            #7c5cff
+        ) top/100% 4px no-repeat,
+        rgba(255,255,255,.06);
+
     backdrop-filter:blur(18px);
 
     border:1px solid rgba(255,255,255,.12);
+    border-top:0;
+
     border-radius:28px;
 
     padding:38px;
@@ -646,38 +656,18 @@ nav.scrolled {
 }
 
 .floating-card::before{
-    content:"";
-    position:absolute;
-
-    top:12px;
-    left:24px;
-    right:24px;
-
-    height:3px;
-    border-radius:50px;
-
-    background:linear-gradient(
-        90deg,
-        #7c5cff,
-        #00e5ff,
-        #7c5cff
-    );
-
-    background-size:250% 100%;
-    animation:borderFlow 6s linear infinite;
+    display:none;
 }
+
 .floating-card:hover{
 
-    transform:
-        translateY(-10px);
+    transform:translateY(-10px);
 
-    border-color:
-        rgba(124,92,255,.45);
+    border-color:rgba(124,92,255,.45);
 
     box-shadow:
         0 28px 70px rgba(0,0,0,.45),
         0 0 55px rgba(124,92,255,.25);
-
 }
 /* ===========================
    PROFILE AVATAR

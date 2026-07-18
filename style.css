@@ -318,24 +318,34 @@ nav.scrolled {
     background-size:40px 40px;
 
     animation:gridMove 18s linear infinite;
+
+    will-change: transform;
+    transform: translateZ(0);
+    pointer-events:none;
 }
 
 .hero::after{
-    filter: blur(10px);
-    animation: none;
-    opacity: .5;
-}
+    content:"";
+    position:absolute;
+    inset:-10%;
+    z-index:-1;
 
-@keyframes floatGlow{
+    background:
+        radial-gradient(circle at 20% 30%, rgba(124,92,255,.18), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(0,255,255,.12), transparent 24%),
+        radial-gradient(circle at 70% 80%, rgba(124,92,255,.15), transparent 28%);
 
-    0%,100%{
-        transform:translate(0,0);
-    }
+    filter: blur(18px);
 
-    50%{
-        transform:translate(-20px,-15px);
-    }
+    animation: floatGlow 20s ease-in-out infinite;
 
+    opacity: .85;
+
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
 }
 .hero-content {
     display: grid;
@@ -3443,6 +3453,30 @@ top:105%;
 
     .floating-card{
         backdrop-filter:blur(10px);
+    }
+
+}
+...
+/* Last existing CSS */
+
+/* ==========================================
+   MOBILE OPTIMIZATION
+========================================== */
+
+@media (max-width: 768px) {
+
+    .hero::before{
+        animation: none;
+        opacity: .35;
+    }
+
+    .hero::after{
+        filter: blur(10px);
+        animation: none;
+        opacity: .5;
+
+        transform: none;
+        will-change: auto;
     }
 
 }

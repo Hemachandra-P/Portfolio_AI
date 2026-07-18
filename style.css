@@ -623,62 +623,204 @@ nav.scrolled {
     }
 
 }
+.floating-card{
+    position:relative;
+    overflow:visible;
 
-.floating-card {
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 30px;
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    position: relative;
-    overflow: hidden;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:28px;
+
+    padding:38px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35),
+        0 0 40px rgba(124,92,255,.12);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease;
 }
 
-.floating-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: var(--gradient-1);
+.floating-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #7c5cff,
+        #00e5ff,
+        #7c5cff
+    );
+
+    background-size:250% 100%;
+
+    animation:borderFlow 6s linear infinite;
+}
+.floating-card:hover{
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(124,92,255,.45);
+
+    box-shadow:
+        0 28px 70px rgba(0,0,0,.45),
+        0 0 55px rgba(124,92,255,.25);
+
+}
+.profile-avatar{
+
+    position:relative;
+
+    width:160px;
+    height:160px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:28px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+        135deg,
+        #7c5cff,
+        #00e5ff);
+
+    padding:4px;
+
+    transition:.45s;
+
+}
+.profile-avatar::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-18px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+        circle,
+        rgba(124,92,255,.45),
+        rgba(0,229,255,.18),
+        transparent 70%);
+
+    filter:blur(18px);
+
+    z-index:-1;
+
+    animation:
+        avatarGlow 5s ease-in-out infinite;
+
+}
+.profile-avatar::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-3px;
+
+    border-radius:50%;
+
+    background:
+        conic-gradient(
+            #7c5cff,
+            #00e5ff,
+            transparent,
+            #7c5cff);
+
+    z-index:-2;
+
+    animation:
+        avatarRotate 14s linear infinite;
+
+}
+@keyframes avatarRotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+@keyframes avatarGlow{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        opacity:.55;
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+        opacity:1;
+
+    }
+
+}
+@keyframes borderFlow{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:250%;
+    }
+
 }
 
-.card-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+.profile-avatar img{
 
-.profile-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: var(--gradient-1);
-    /* optional gradient background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    border: 5px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
+    width:100%;
+    height:100%;
 
-.profile-avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: all 0.3s ease;
+    border-radius:50%;
+
+    object-fit:cover;
+
+    background:#0f172a;
+
+    transition:
+        transform .45s ease,
+        filter .45s ease;
+
 }
 
 /* Glowing effect on hover */
-.profile-avatar:hover img {
-    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7);
-    transform: scale(1.05);
+.profile-avatar:hover img{
+
+    transform:scale(1.08);
+
+    filter:
+        brightness(1.08)
+        saturate(1.12);
+
 }
 
 
@@ -1213,11 +1355,27 @@ footer {
         padding: 20px;
     }
 
-    .profile-avatar {
-        width: 100px;
-        height: 100px;
-        font-size: 40px;
-    }
+   @media(max-width:768px){
+
+.profile-avatar{
+
+    width:140px;
+    height:140px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.profile-avatar{
+
+    width:120px;
+    height:120px;
+
+}
+
+}
 
     .section-title h2 {
         font-size: 1.8rem;

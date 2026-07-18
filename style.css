@@ -3502,3 +3502,10 @@ top:105%;
 
     filter:blur(35px);
 }
+@media (hover:none){
+
+    .cursor-glow{
+        display:none;
+    }
+
+}

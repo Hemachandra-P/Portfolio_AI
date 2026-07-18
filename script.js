@@ -316,3 +316,54 @@ function typeEffect() {
 }
 
 typeEffect();
+/* ================= AI Boot Screen ================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const bootScreen = document.getElementById("bootScreen");
+    const progressBar = document.getElementById("progressBar");
+    const loadingPercent = document.getElementById("loadingPercent");
+    const lines = document.querySelectorAll("#terminal .line");
+
+    let progress = 0;
+    let lineIndex = 0;
+
+    // Show terminal lines one by one
+    const lineTimer = setInterval(() => {
+        if (lineIndex < lines.length) {
+            lines[lineIndex].style.opacity = "1";
+            lines[lineIndex].style.transition = "opacity 0.4s ease";
+            lineIndex++;
+        } else {
+            clearInterval(lineTimer);
+        }
+    }, 500);
+
+    // Progress animation
+    const progressTimer = setInterval(() => {
+
+        progress++;
+
+        progressBar.style.width = progress + "%";
+        loadingPercent.innerText = progress + "%";
+
+        if (progress >= 100) {
+
+            clearInterval(progressTimer);
+
+            setTimeout(() => {
+
+                bootScreen.style.transition = "opacity 0.8s ease";
+                bootScreen.style.opacity = "0";
+
+                setTimeout(() => {
+                    bootScreen.style.display = "none";
+                }, 800);
+
+            }, 500);
+
+        }
+
+    }, 25);
+
+});

@@ -31,6 +31,47 @@ style.textContent = `
         }
     `;
 document.head.appendChild(style);
+/* ==========================================
+        FLOATING PARTICLES
+========================================== */
+
+const particleContainer = document.getElementById("floatingParticles");
+
+if (particleContainer) {
+
+    const colors = [
+        "#7c5cff",
+        "#00e5ff",
+        "#ffffff"
+    ];
+
+    for (let i = 0; i < 25; i++) {
+
+        const particle = document.createElement("span");
+
+        particle.className = "particle";
+
+        const size = Math.random() * 4 + 2;
+
+        particle.style.width = size + "px";
+        particle.style.height = size + "px";
+
+        particle.style.left = Math.random() * 100 + "%";
+
+        particle.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+        particle.style.animationDuration =
+            (15 + Math.random() * 10) + "s";
+
+        particle.style.animationDelay =
+            (-Math.random() * 20) + "s";
+
+        particleContainer.appendChild(particle);
+
+    }
+
+}
 
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const mobileNav = document.getElementById('mobileNav');

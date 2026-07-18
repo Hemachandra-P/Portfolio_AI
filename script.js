@@ -390,17 +390,11 @@ const progressTimer = setInterval(() => {
    CURSOR GLOW
 ========================================== */
 
-const cursorGlow = document.querySelector(".cursor-glow");
+const glow = document.getElementById("cursorGlow");
 
-window.addEventListener("mousemove", (e) => {
-    cursorGlow.style.left = e.clientX + "px";
-    cursorGlow.style.top = e.clientY + "px";
-});
+document.addEventListener("mousemove", (e) => {
 
-document.addEventListener("mouseleave", () => {
-    cursorGlow.style.opacity = "0";
-});
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
 
-document.addEventListener("mouseenter", () => {
-    cursorGlow.style.opacity = ".8";
 });

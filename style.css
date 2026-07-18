@@ -3007,3 +3007,33 @@ top:105%;
         transition:opacity .35s ease;
     }
 }
+/* Desktop */
+@media (min-width:769px){
+
+    .desktop-loader{
+        display:block;
+    }
+
+    .mobile-loader{
+        display:none !important;
+    }
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+    .desktop-loader{
+        display:none !important;
+    }
+
+    .mobile-loader{
+        display:flex !important;
+    }
+
+    .mobile-line{
+        opacity:0;
+        transition:opacity .35s ease;
+    }
+
+}

@@ -367,8 +367,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileProgressBar = document.getElementById("mobileProgressBar");
     const mobilePercent = document.getElementById("mobilePercent");
     const lines = window.innerWidth <= 768
-    ? document.querySelectorAll(".mobile-line")
-    : document.querySelectorAll("#terminal .line");
+        ? document.querySelectorAll(".mobile-line")
+        : document.querySelectorAll("#terminal .line");
 
     let progress = 0;
     let lineIndex = 0;
@@ -392,40 +392,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Progress */
 
-/* Progress */
+    /* Progress */
 
-const progressTimer = setInterval(() => {
+    const progressTimer = setInterval(() => {
 
-    progress++;
+        progress++;
 
-    if (progressBar)
-        progressBar.style.width = progress + "%";
+        if (progressBar)
+            progressBar.style.width = progress + "%";
 
-    if (loadingPercent)
-        loadingPercent.textContent = progress + "%";
+        if (loadingPercent)
+            loadingPercent.textContent = progress + "%";
 
-    if (mobileProgressBar)
-        mobileProgressBar.style.width = progress + "%";
+        if (mobileProgressBar)
+            mobileProgressBar.style.width = progress + "%";
 
-    if (mobilePercent)
-        mobilePercent.textContent = progress + "%";
+        if (mobilePercent)
+            mobilePercent.textContent = progress + "%";
 
-    if (progress >= 100) {
+        if (progress >= 100) {
 
-        clearInterval(progressTimer);
+            clearInterval(progressTimer);
 
-        document.body.classList.add("loader-finished");
+            document.body.classList.add("loader-finished");
 
-        bootScreen.style.transition = "opacity .6s ease";
-        bootScreen.style.opacity = "0";
+            bootScreen.style.transition = "opacity .6s ease";
+            bootScreen.style.opacity = "0";
 
-        setTimeout(() => {
-            bootScreen.remove();
-        }, 600);
+            setTimeout(() => {
+                bootScreen.remove();
+            }, 600);
 
-    }
+        }
 
-}, 25);
+    }, 25);
 });
 /* ==========================================
    CURSOR GLOW
@@ -437,5 +437,403 @@ document.addEventListener("mousemove", (e) => {
 
     glow.style.left = e.clientX + "px";
     glow.style.top = e.clientY + "px";
+
+});
+
+const projects = {
+
+    malware: {
+
+        title: "Android Malware Detection Using Static & Dynamic Analysis",
+
+        overview: "A research-based Android malware detection system that combines Machine Learning and Deep Learning techniques to identify malicious Android applications using both static and dynamic analysis.",
+
+        problem: "Traditional signature-based malware detection struggles to identify newly emerging malware variants, making Android devices vulnerable to modern threats.",
+
+        solution: "Designed a hybrid malware detection pipeline that extracts application features, preprocesses the dataset, trains multiple machine learning models, and compares their performance for effective malware classification.",
+
+        features: [
+            "Static & Dynamic Analysis",
+            "Feature Extraction",
+            "Machine Learning Models",
+            "1D-CNN Deep Learning Model",
+            "Research Publication"
+        ],
+
+        technologies: [
+            "Python",
+            "Scikit-learn",
+            "TensorFlow",
+            "Pandas",
+            "NumPy",
+            "1D-CNN"
+        ],
+
+        workflow: [
+            "Dataset Collection",
+            "Feature Extraction",
+            "Data Preprocessing",
+            "Model Training",
+            "Prediction & Classification"
+        ],
+
+        outcome: "Successfully developed an Android malware detection system demonstrating how Machine Learning and Deep Learning techniques can improve malware identification.",
+
+        learnings: [
+            "Cyber Security",
+            "Machine Learning",
+            "Deep Learning",
+            "Feature Engineering",
+            "Research Methodology"
+        ],
+
+        github: "https://github.com/Hemachandra-P/Android-malware-Detection-using-Static-and-Dynamic-Analysis"
+
+    },
+    fakeNews: {
+
+        title: "Fake News Detection Using Machine Learning",
+
+        overview: "A machine learning-based fake news detection system designed to classify news articles as genuine or fake by analyzing textual content through Natural Language Processing (NLP) techniques.",
+
+        problem: "The rapid spread of misinformation across digital platforms makes it difficult for users to distinguish credible news from fake content, leading to misinformation and public confusion.",
+
+        solution: "Developed an end-to-end text classification pipeline involving data preprocessing, TF-IDF vectorization, model training, and comparative evaluation of multiple machine learning algorithms to identify fake news articles.",
+
+        features: [
+            "Text Preprocessing",
+            "TF-IDF Feature Extraction",
+            "Multiple ML Model Comparison",
+            "Real-time News Classification",
+            "NLP-based Text Analysis"
+        ],
+
+        technologies: [
+            "Python",
+            "Scikit-learn",
+            "Pandas",
+            "NumPy",
+            "NLTK",
+            "TF-IDF Vectorizer",
+            "XGBoost"
+        ],
+
+        workflow: [
+            "Dataset Collection",
+            "Text Cleaning & Preprocessing",
+            "TF-IDF Vectorization",
+            "Model Training",
+            "Prediction & Classification"
+        ],
+
+        outcome: "Successfully developed a fake news detection system capable of analyzing textual information and distinguishing between genuine and fake news articles using multiple machine learning models.",
+
+        learnings: [
+            "Natural Language Processing",
+            "Text Feature Engineering",
+            "Machine Learning Model Comparison",
+            "Model Evaluation",
+            "Data Preprocessing"
+        ],
+
+        github: "YOUR_FAKE_NEWS_GITHUB_LINK"
+
+    },
+    waterQuality: {
+
+        title: "Water Quality Prediction Using Machine Learning",
+
+        overview: "A machine learning project that predicts water quality by analyzing environmental and chemical parameters, helping identify whether water is suitable for use based on historical data.",
+
+        problem: "Assessing water quality manually is time-consuming and requires extensive laboratory testing, making continuous monitoring difficult.",
+
+        solution: "Built a machine learning pipeline that preprocesses water quality datasets, analyzes multiple environmental parameters, and predicts overall water quality using supervised learning techniques.",
+
+        features: [
+            "Water Quality Prediction",
+            "Environmental Data Analysis",
+            "Data Visualization",
+            "Machine Learning Classification",
+            "Feature Analysis"
+        ],
+
+        technologies: [
+            "Python",
+            "Scikit-learn",
+            "Pandas",
+            "NumPy",
+            "Matplotlib",
+            "Jupyter Notebook"
+        ],
+
+        workflow: [
+            "Dataset Collection",
+            "Data Cleaning",
+            "Exploratory Data Analysis",
+            "Feature Engineering",
+            "Model Training",
+            "Prediction"
+        ],
+
+        outcome: "Successfully developed a predictive model capable of analyzing multiple water quality parameters and assisting in water quality assessment through machine learning techniques.",
+
+        learnings: [
+            "Environmental Data Analysis",
+            "Machine Learning Pipeline",
+            "Feature Engineering",
+            "Data Visualization",
+            "Predictive Modeling"
+        ],
+
+        github: "YOUR_WATER_QUALITY_GITHUB_LINK"
+
+    },
+    waterQuality: {
+
+        title: "Water Quality Prediction Using Machine Learning",
+
+        overview: "A machine learning project that predicts water quality by analyzing environmental and chemical parameters, helping identify whether water is suitable for use based on historical data.",
+
+        problem: "Assessing water quality manually is time-consuming and requires extensive laboratory testing, making continuous monitoring difficult.",
+
+        solution: "Built a machine learning pipeline that preprocesses water quality datasets, analyzes multiple environmental parameters, and predicts overall water quality using supervised learning techniques.",
+
+        features: [
+            "Water Quality Prediction",
+            "Environmental Data Analysis",
+            "Data Visualization",
+            "Machine Learning Classification",
+            "Feature Analysis"
+        ],
+
+        technologies: [
+            "Python",
+            "Scikit-learn",
+            "Pandas",
+            "NumPy",
+            "Matplotlib",
+            "Jupyter Notebook"
+        ],
+
+        workflow: [
+            "Dataset Collection",
+            "Data Cleaning",
+            "Exploratory Data Analysis",
+            "Feature Engineering",
+            "Model Training",
+            "Prediction"
+        ],
+
+        outcome: "Successfully developed a predictive model capable of analyzing multiple water quality parameters and assisting in water quality assessment through machine learning techniques.",
+
+        learnings: [
+            "Environmental Data Analysis",
+            "Machine Learning Pipeline",
+            "Feature Engineering",
+            "Data Visualization",
+            "Predictive Modeling"
+        ],
+
+        github: "YOUR_WATER_QUALITY_GITHUB_LINK"
+
+    },
+    photography: {
+
+        title: "Photography Portfolio Website",
+
+        overview: "A modern photography portfolio website developed to showcase photographs through a responsive, visually appealing gallery with category-based organization and smooth user interactions.",
+
+        problem: "Traditional photo galleries often lack responsiveness, organization, and an engaging user experience for showcasing photography collections.",
+
+        solution: "Designed and developed a responsive portfolio website featuring categorized galleries, dynamic image management, and an optimized viewing experience across multiple devices.",
+
+        features: [
+            "Responsive Gallery",
+            "Category Filtering",
+            "Lightbox Image Viewer",
+            "Dynamic Photo Management",
+            "Mobile-Friendly Design"
+        ],
+
+        technologies: [
+            "Django",
+            "Python",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "SQLite"
+        ],
+
+        workflow: [
+            "Photo Upload",
+            "Category Management",
+            "Gallery Rendering",
+            "User Interaction",
+            "Responsive Display"
+        ],
+
+        outcome: "Successfully built a fully functional photography portfolio that provides an engaging browsing experience while efficiently managing and presenting photographic collections.",
+
+        learnings: [
+            "Django Development",
+            "Responsive Design",
+            "Frontend Optimization",
+            "Media Management",
+            "UI/UX Design"
+        ],
+
+        github: "YOUR_PHOTOGRAPHY_GITHUB_LINK"
+
+    },
+    passwordValidator: {
+
+        title: "Password Strength Validator",
+
+        overview: "A security-focused web application that evaluates password strength based on multiple security criteria and provides instant feedback to encourage stronger password creation.",
+
+        problem: "Weak passwords remain one of the leading causes of unauthorized account access and cybersecurity breaches.",
+
+        solution: "Developed an interactive password validation tool that analyzes password characteristics such as length, complexity, and character diversity while providing real-time strength feedback.",
+
+        features: [
+            "Real-Time Password Analysis",
+            "Strength Indicator",
+            "Security Rule Validation",
+            "Instant Feedback",
+            "Interactive User Interface"
+        ],
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+        workflow: [
+            "Password Input",
+            "Rule Validation",
+            "Strength Analysis",
+            "Feedback Generation",
+            "Result Display"
+        ],
+
+        outcome: "Successfully developed a password validation tool that promotes secure password creation by providing immediate strength analysis and actionable feedback.",
+
+        learnings: [
+            "Frontend Development",
+            "JavaScript Logic",
+            "Cybersecurity Fundamentals",
+            "Form Validation",
+            "User Experience Design"
+        ],
+
+        github: "YOUR_PASSWORD_VALIDATOR_GITHUB_LINK"
+
+    },
+
+};
+
+function openProject(project) {
+
+    const p = projects[project];
+
+    document.getElementById("modalContent").innerHTML = `
+
+        <h2>${p.title}</h2>
+
+        <div class="modal-section">
+            <h3>📖 Overview</h3>
+            <p>${p.overview}</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>🎯 Problem Statement</h3>
+            <p>${p.problem}</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>💡 Solution</h3>
+            <p>${p.solution}</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>✨ Key Features</h3>
+            <ul>
+                ${p.features.map(feature => `<li>${feature}</li>`).join("")}
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>🛠 Technologies Used</h3>
+            <p>${p.technologies.join(" • ")}</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>⚙ Workflow</h3>
+            <ul>
+                ${p.workflow.map(step => `<li>${step}</li>`).join("")}
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>🎯 Project Outcome</h3>
+            <p>${p.outcome}</p>
+        </div>
+
+        <div class="modal-section">
+            <h3>📚 Key Learnings</h3>
+            <ul>
+                ${p.learnings.map(item => `<li>${item}</li>`).join("")}
+            </ul>
+        </div>
+
+        <div class="modal-section">
+            <a class="project-link"
+               href="${p.github}"
+               target="_blank">
+
+                <i class="fab fa-github"></i>
+                Project Link
+
+            </a>
+        </div>
+
+    `;
+
+    document
+        .getElementById("projectModal")
+        .classList
+        .add("active");
+
+}
+
+function closeProject() {
+
+    document
+        .getElementById("projectModal")
+        .classList
+        .remove("active");
+
+}
+
+window.onclick = function (e) {
+
+    const modal = document.getElementById("projectModal");
+
+    if (e.target === modal) {
+
+        closeProject();
+
+    }
+
+}
+
+document.addEventListener("keydown", function (e) {
+
+    if (e.key === "Escape") {
+
+        closeProject();
+
+    }
 
 });

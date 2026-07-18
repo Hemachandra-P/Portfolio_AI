@@ -3189,3 +3189,23 @@ top:105%;
 .loader-finished *{
     animation-play-state: paused !important;
 }
+/* =========================
+   PERFORMANCE FIX
+========================= */
+
+.status-panel,
+.status-box,
+.security-panel,
+.security-box{
+
+    position: relative;
+    z-index: 20;
+
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    will-change: transform, opacity;
+}

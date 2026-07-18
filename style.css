@@ -3809,6 +3809,13 @@ top:105%;
 
     transition:.35s;
 }
+.preview-placeholder video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:14px;
+}
 .preview-placeholder img,
 .preview-placeholder video,
 .preview-placeholder iframe{

@@ -2280,52 +2280,116 @@ html {
 }
 
 /* Orbiting Nodes */
+/* ==========================
+   ORBITING AI NODES
+========================== */
 
 .orbit{
-
     position:absolute;
-
-    width:10px;
-
-    height:10px;
-
+    top:50%;
+    left:50%;
+    width:14px;
+    height:14px;
+    margin:-7px;
     border-radius:50%;
-
     background:#00ffff;
-
-    box-shadow:0 0 15px #00ffff;
+    box-shadow:
+        0 0 12px #00ffff,
+        0 0 25px #00ffff,
+        0 0 45px #7c5cff;
 }
+
+/* Large Orbit */
 
 .orbit1{
-
-    top:15px;
-    left:50%;
-
-    margin-left:-5px;
-
-    animation:orbit1 5s linear infinite;
+    animation:orbitLarge 8s linear infinite;
 }
+
+/* Medium Orbit */
 
 .orbit2{
-
-    bottom:18px;
-    left:50%;
-
-    margin-left:-5px;
-
-    animation:orbit2 8s linear infinite;
+    animation:orbitMedium 6s linear infinite reverse;
 }
+
+/* Small Orbit */
 
 .orbit3{
-
-    top:50%;
-    left:15px;
-
-    margin-top:-5px;
-
-    animation:orbit3 6s linear infinite;
+    animation:orbitSmall 4s linear infinite;
 }
 
+@keyframes orbitLarge{
+
+    from{
+        transform:
+            rotate(0deg)
+            translateX(320px)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            rotate(360deg)
+            translateX(320px)
+            rotate(-360deg);
+    }
+
+}
+
+@keyframes orbitMedium{
+
+    from{
+        transform:
+            rotate(0deg)
+            translateX(240px)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            rotate(-360deg)
+            translateX(240px)
+            rotate(360deg);
+    }
+
+}
+
+@keyframes orbitSmall{
+
+    from{
+        transform:
+            rotate(0deg)
+            translateX(150px)
+            rotate(0deg);
+    }
+
+    to{
+        transform:
+            rotate(360deg)
+            translateX(150px)
+            rotate(-360deg);
+    }
+
+}
+.orbit4{
+    animation:orbitLarge 12s linear infinite reverse;
+    width:10px;
+    height:10px;
+    background:#7c5cff;
+}
+
+.orbit5{
+    animation:orbitMedium 9s linear infinite;
+    width:8px;
+    height:8px;
+    background:#00ffd5;
+}
+
+.orbit6{
+    animation:orbitSmall 5s linear infinite reverse;
+    width:6px;
+    height:6px;
+    background:white;
+}
 /* ===================================================
    Logo
 =================================================== */

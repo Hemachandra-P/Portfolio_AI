@@ -3575,30 +3575,3 @@ top:105%;
     }
 
 }
-/* Override old project card styles */
-
-.projects .project-card{
-
-    padding:0 !important;
-
-    margin:0 !important;
-
-    overflow:hidden;
-
-    background:rgba(18,22,35,.85) !important;
-
-    border-radius:22px !important;
-
-}
-
-.projects .project-card .card-icon{
-
-    display:none !important;
-
-}
-
-.projects .project-card ul{
-
-    display:none !important;
-
-}

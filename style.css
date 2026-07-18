@@ -339,36 +339,24 @@ nav.scrolled {
 }
 @keyframes gridMove{
 
-    0%,100%{
-        opacity:.55;
-        transform:translate(0,0);
+    0%{
+        transform:translateY(0);
     }
 
-    50%{
-        opacity:.75;
-        transform:translate(0,0);
+    100%{
+        transform:translateY(-40px);
     }
 
 }
 
 @keyframes floatGlow{
 
-    0%{
-        transform:translate(0,0) scale(1);
-        opacity:.45;
-        filter:blur(45px);
+    0%,100%{
+        transform:translate(0,0);
     }
 
     50%{
-        transform:translate(-35px,-25px) scale(1.18);
-        opacity:.9;
-        filter:blur(65px);
-    }
-
-    100%{
-        transform:translate(30px,20px) scale(1.05);
-        opacity:.5;
-        filter:blur(50px);
+        transform:translate(-20px,-15px);
     }
 
 }
@@ -487,24 +475,12 @@ nav.scrolled {
 
     0%,100%{
         transform:scale(1);
-        opacity:.45;
-
-        box-shadow:
-        0 0 8px #7c5cff,
-        0 0 18px rgba(124,92,255,.4);
+        opacity:.5;
     }
 
     50%{
-
-        transform:scale(2);
-
+        transform:scale(1.6);
         opacity:1;
-
-        box-shadow:
-        0 0 14px #00ffff,
-        0 0 35px #7c5cff,
-        0 0 60px rgba(0,255,255,.6);
-
     }
 
 }
@@ -517,15 +493,15 @@ nav.scrolled {
     }
 
     25%{
-        transform:translate(8px,-8px);
+        transform:translate(2px,-2px);
     }
 
     50%{
-        transform:translate(-8px,6px);
+        transform:translate(-2px,2px);
     }
 
     75%{
-        transform:translate(10px,4px);
+        transform:translate(2px,1px);
     }
 
 }
@@ -637,13 +613,13 @@ nav.scrolled {
 @keyframes linePulse{
 
     0%,100%{
-        opacity:.25;
-        filter:brightness(1);
+        opacity:.18;
+        transform:scaleX(1);
     }
 
     50%{
-        opacity:1;
-        filter:brightness(2);
+        opacity:.75;
+        transform:scaleX(1.05);
     }
 
 }

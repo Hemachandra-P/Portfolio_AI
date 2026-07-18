@@ -338,20 +338,17 @@ nav.scrolled {
     animation:floatGlow 12s ease-in-out infinite alternate;
 }
 @keyframes gridMove{
-    0%{
-        transform:translate(0,0) scale(1);
+
+    0%,100%{
         opacity:.55;
+        transform:translate(0,0);
     }
 
     50%{
-        transform:translate(-25px,-25px) scale(1.02);
-        opacity:.9;
+        opacity:.75;
+        transform:translate(0,0);
     }
 
-    100%{
-        transform:translate(-50px,-50px) scale(1);
-        opacity:.55;
-    }
 }
 
 @keyframes floatGlow{

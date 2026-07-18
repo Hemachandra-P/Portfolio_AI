@@ -2857,6 +2857,19 @@ top:105%;
 .loader-finished *{
     animation-play-state: paused !important;
 }
+/* TEMP TEST */
+
+.radar,
+.hud-ring,
+.orbit,
+.hud-circle::before,
+.hud-circle::after{
+    animation: none !important;
+}
+
+.orbit{
+    display:none !important;
+}
 /* =========================
    PERFORMANCE FIX
 ========================= */

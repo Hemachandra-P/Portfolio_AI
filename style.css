@@ -656,7 +656,8 @@ nav.scrolled {
 
     height:4px;
 
-    border-radius:28px 28px 0 0;
+    border-top-left-radius:28px;
+    border-top-right-radius:28px;
 
     background:linear-gradient(
         90deg,
@@ -668,6 +669,8 @@ nav.scrolled {
     background-size:250% 100%;
 
     animation:borderFlow 6s linear infinite;
+
+    overflow:hidden;
 }
 .floating-card:hover{
 

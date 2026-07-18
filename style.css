@@ -2905,6 +2905,10 @@ top:105%;
    MOBILE AI LOADER
 ========================================== */
 
+/* ==========================================
+   MOBILE AI LOADER
+========================================== */
+
 .mobile-loader{
     position:absolute;
     inset:0;
@@ -2934,89 +2938,72 @@ top:105%;
 }
 
 .mobile-terminal{
-
     width:100%;
     max-width:360px;
-
     background:#0b1220;
-
     border:1px solid rgba(0,247,255,.25);
-
     border-radius:12px;
-
     padding:18px;
-
     text-align:left;
-
     box-shadow:0 0 20px rgba(0,247,255,.08);
-
 }
 
 .mobile-line{
-
     color:#d1d5db;
-
     margin:10px 0;
-
     font-size:.9rem;
-
 }
 
 .mobile-line.success{
-
     color:#22c55e;
-
 }
 
 .mobile-progress{
-
     margin-top:20px;
-
     height:8px;
-
     background:#1f2937;
-
     border-radius:20px;
-
     overflow:hidden;
-
 }
 
 #mobileProgressBar{
-
     width:0%;
-
     height:100%;
-
     background:linear-gradient(90deg,#06b6d4,#22d3ee);
-
     transition:width .25s linear;
-
 }
 
 #mobilePercent{
-
     margin-top:12px;
-
     text-align:right;
-
     color:#ffffff;
-
     font-weight:600;
-
 }
+
+/* Desktop */
+@media (min-width:769px){
+    .desktop-loader{
+        display:block;
+    }
+
+    .mobile-loader{
+        display:none !important;
+    }
+}
+
+/* Mobile */
 @media (max-width:768px){
 
-.desktop-loader{
+    .desktop-loader{
+        display:none !important;
+    }
 
-    display:none !important;
+    .mobile-loader{
+        display:flex !important;
+    }
 
-}
-
-.mobile-loader{
-
-    display:flex !important;
-
-}
-
+    .mobile-line{
+        opacity:0;
+        transition:opacity .35s ease;
+    }
 }

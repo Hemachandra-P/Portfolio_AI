@@ -247,72 +247,113 @@ Thank you for respecting the work and effort that went into creating this code. 
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
+   <section id="home" class="hero">
 
-                <div class="hero-text fade-in">
-                    <h1>Hey!, I'm <span>Venkata Hemachandra Perigisetty</span></h1>
+    <!-- AI Animated Background -->
+    <div class="hero-ai-background">
+        <canvas id="heroCanvas"></canvas>
+    </div>
 
-                    <p>
-                        AI Engineer and Operations & Technology Intern with a strong interest in
-                        Artificial Intelligence, Machine Learning, AI Governance, and Information
-                        Systems. Passionate about building intelligent, reliable, and responsible AI
-                        solutions while continuously learning emerging technologies.
-                    </p>
+    <div class="container">
 
-                    <div class="hero-buttons">
-                        <a href="#projects" class="cta-button">View Projects</a>
-                        <a href="assets/resume/New_resume_july_AI.pdf" class="cta-button secondary" target="_blank">
-                            Download Resume
-                        </a>
-                    </div>
+        <div class="hero-content">
+
+            <div class="hero-text fade-in">
+
+                <h1>
+                    Hey!, I'm
+                    <span>Venkata Hemachandra Perigisetty</span>
+                </h1>
+
+                <p>
+                    AI Engineer and Operations & Technology Intern with a strong interest in
+                    Artificial Intelligence, Machine Learning, AI Governance, and Information
+                    Systems. Passionate about building intelligent, reliable, and responsible AI
+                    solutions while continuously learning emerging technologies.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="cta-button">
+                        View Projects
+                    </a>
+
+                    <a href="assets/resume/New_resume_july_AI.pdf"
+                       class="cta-button secondary"
+                       target="_blank">
+                        Download Resume
+                    </a>
                 </div>
 
-                <div class="hero-visual fade-in">
-                    <div class="floating-card">
+            </div>
 
-                        <div class="card-content">
+            <div class="hero-visual fade-in">
 
-                            <div class="profile-avatar">
-                                <img src="assets/images/my_passportphoto.jpeg" alt="Hemachandra">
-                            </div>
+                <div class="floating-card">
 
-                            <h3>Venkata Hemachandra Perigisetty</h3>
+                    <div class="card-content">
 
-                            <p class="typing-text">
-                                <span id="typing"></span>
+                        <div class="profile-avatar">
+                            <img src="assets/images/my_passportphoto.jpeg"
+                                 alt="Hemachandra">
+                        </div>
+
+                        <h3>
+                            Venkata Hemachandra Perigisetty
+                        </h3>
+
+                        <p class="typing-text">
+                            <span id="typing"></span>
+                        </p>
+
+                        <div class="location-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Vijayawada, India</span>
+                        </div>
+
+                        <div style="
+                            margin-top:20px;
+                            padding:15px;
+                            background:rgba(16,185,129,0.1);
+                            border-radius:10px;
+                            width:100%;
+                        ">
+
+                            <p style="
+                                font-size:0.9rem;
+                                margin-bottom:5px;
+                            ">
+                                <strong>Current Role</strong>
                             </p>
 
-                            <div class="location-chip">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Vijayawada, India</span>
-                            </div>
+                            <p style="
+                                font-size:1.05rem;
+                                font-weight:600;
+                                color:var(--accent);
+                            ">
+                                Operations & Technology Intern
+                                <br>
 
-                            <div
-                                style="margin-top:20px;padding:15px;background:rgba(16,185,129,0.1);border-radius:10px;width:100%;">
-
-                                <p style="font-size:0.9rem;margin-bottom:5px;">
-                                    <strong>Current Role</strong>
-                                </p>
-
-                                <p style="font-size:1.05rem;font-weight:600;color:var(--accent);">
-                                    Operations & Technology Intern<br>
-                                    <span style="font-size:0.95rem;font-weight:500;">
-                                        AI Governance
-                                    </span>
-                                </p>
-
-                            </div>
+                                <span style="
+                                    font-size:0.95rem;
+                                    font-weight:500;
+                                ">
+                                    AI Governance
+                                </span>
+                            </p>
 
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
+
         </div>
-    </section>
+
+    </div>
+
+</section>
 
     <div class="scroll-down">
         <a href="#about">

@@ -791,20 +791,6 @@ nav.scrolled {
 
 /* Moving data effect */
 
-@keyframes lineFlow{
-
-    0%{
-        background-position:0% 50%;
-    }
-
-    100%{
-        background-position:300% 50%;
-    }
-
-}
-
-/* Gentle movement */
-
 @keyframes lineFloat{
 
     0%,100%{

@@ -3432,3 +3432,11 @@ top:105%;
     }
 
 }
+@media (max-width:768px){
+
+    .floating-card::before{
+        animation:none;
+        background-position:center;
+    }
+
+}

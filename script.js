@@ -386,3 +386,21 @@ const progressTimer = setInterval(() => {
 
 }, 25);
 });
+/* ==========================================
+   CURSOR GLOW
+========================================== */
+
+const cursorGlow = document.querySelector(".cursor-glow");
+
+window.addEventListener("mousemove", (e) => {
+    cursorGlow.style.left = e.clientX + "px";
+    cursorGlow.style.top = e.clientY + "px";
+});
+
+document.addEventListener("mouseleave", () => {
+    cursorGlow.style.opacity = "0";
+});
+
+document.addEventListener("mouseenter", () => {
+    cursorGlow.style.opacity = ".8";
+});

@@ -515,82 +515,98 @@ nav.scrolled {
     inset:0;
     pointer-events:none;
     z-index:0;
+    overflow:hidden;
 }
 
 .line{
     position:absolute;
-    height:2px;
+    height:1.5px;
+    border-radius:20px;
+
     background:linear-gradient(
         90deg,
-        transparent,
-        rgba(124,92,255,.6),
-        rgba(0,255,255,.7),
-        rgba(124,92,255,.6),
-        transparent
+        transparent 0%,
+        rgba(124,92,255,.15) 10%,
+        rgba(0,255,255,.65) 50%,
+        rgba(124,92,255,.15) 90%,
+        transparent 100%
     );
 
-    border-radius:10px;
-
     box-shadow:
-        0 0 8px rgba(124,92,255,.4);
+        0 0 6px rgba(124,92,255,.35),
+        0 0 14px rgba(0,255,255,.15);
 
-    animation:lineGlow 5s ease-in-out infinite;
+    transform-origin:left center;
+
+    animation:linePulse 5s ease-in-out infinite;
 }
 
-/* Positions */
+/* ---------- TOP NETWORK ---------- */
 
 .l1{
-    width:170px;
+    width:220px;
     top:14%;
-    left:11%;
-    transform:rotate(15deg);
+    left:8%;
+    transform:rotate(12deg);
+    animation-delay:0s;
 }
 
 .l2{
-    width:150px;
-    top:23%;
-    left:46%;
+    width:190px;
+    top:19%;
+    left:38%;
     transform:rotate(-18deg);
+    animation-delay:1s;
 }
 
+/* ---------- MIDDLE NETWORK ---------- */
+
 .l3{
-    width:180px;
-    top:50%;
-    left:18%;
-    transform:rotate(-8deg);
+    width:240px;
+    top:47%;
+    left:10%;
+    transform:rotate(8deg);
+    animation-delay:2s;
 }
 
 .l4{
-    width:160px;
-    top:63%;
-    left:43%;
-    transform:rotate(22deg);
+    width:210px;
+    top:58%;
+    left:42%;
+    transform:rotate(-10deg);
+    animation-delay:.5s;
 }
 
+/* ---------- BOTTOM NETWORK ---------- */
+
 .l5{
-    width:150px;
-    top:76%;
-    left:22%;
-    transform:rotate(-12deg);
+    width:200px;
+    top:77%;
+    left:18%;
+    transform:rotate(-14deg);
+    animation-delay:1.5s;
 }
 
 .l6{
-    width:140px;
-    top:35%;
-    left:73%;
-    transform:rotate(30deg);
+    width:170px;
+    top:69%;
+    left:67%;
+    transform:rotate(26deg);
+    animation-delay:2.5s;
 }
 
-@keyframes lineGlow{
+/*=========================================*/
+
+@keyframes linePulse{
 
     0%,100%{
-        opacity:.2;
-        filter:brightness(1);
+        opacity:.18;
+        transform:scaleX(1);
     }
 
     50%{
-        opacity:.9;
-        filter:brightness(1.7);
+        opacity:.75;
+        transform:scaleX(1.05);
     }
 
 }

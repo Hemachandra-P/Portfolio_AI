@@ -3440,3 +3440,10 @@ top:105%;
     }
 
 }
+@media (max-width:768px){
+
+    .floating-card{
+        backdrop-filter:blur(10px);
+    }
+
+}

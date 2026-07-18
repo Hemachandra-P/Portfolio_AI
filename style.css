@@ -1306,13 +1306,21 @@ footer {
 
 @media (max-width:768px){
 
-    .profile-avatar{
-        width:150px;
-        height:150px;
+    .profile-avatar::before{
+        animation:none;
+        opacity:.4;
+        filter:blur(12px);
+    }
+
+    .ai-lines{
+        display:none;
+    }
+
+    .ai-nodes{
+        display:none;
     }
 
 }
-
 @media (max-width:480px){
 
     .profile-avatar{

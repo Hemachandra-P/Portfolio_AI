@@ -3792,18 +3792,42 @@ top:105%;
 
     border-radius:14px;
 
-    background:white;
+    overflow:hidden;
 
-    box-shadow:
-        inset 0 0 25px rgba(0,0,0,.08);
+    position:relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #eef6ff
+        );
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    color:#999;
+    transition:.35s;
+}
+.preview-placeholder img,
+.preview-placeholder video,
+.preview-placeholder iframe{
 
-    overflow:hidden;
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    transition:.35s;
+}
+
+.project-card:hover .preview-placeholder img,
+.project-card:hover .preview-placeholder video{
+
+    transform:scale(1.03);
+
 }
 /*==================================================
                 PROJECTS SECTION V2

@@ -647,11 +647,16 @@ nav.scrolled {
 
 .floating-card::before{
     content:"";
+
     position:absolute;
-    left:0;
+
     top:0;
-    width:100%;
+    left:16px;
+    right:16px;
+
     height:4px;
+
+    border-radius:10px;
 
     background:linear-gradient(
         90deg,

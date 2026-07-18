@@ -506,6 +506,94 @@ nav.scrolled {
     }
 
 }
+/*=========================================
+        AI CONNECTION LINES
+=========================================*/
+
+.ai-lines{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.line{
+    position:absolute;
+    height:2px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(124,92,255,.6),
+        rgba(0,255,255,.7),
+        rgba(124,92,255,.6),
+        transparent
+    );
+
+    border-radius:10px;
+
+    box-shadow:
+        0 0 8px rgba(124,92,255,.4);
+
+    animation:lineGlow 5s ease-in-out infinite;
+}
+
+/* Positions */
+
+.l1{
+    width:170px;
+    top:14%;
+    left:11%;
+    transform:rotate(15deg);
+}
+
+.l2{
+    width:150px;
+    top:23%;
+    left:46%;
+    transform:rotate(-18deg);
+}
+
+.l3{
+    width:180px;
+    top:50%;
+    left:18%;
+    transform:rotate(-8deg);
+}
+
+.l4{
+    width:160px;
+    top:63%;
+    left:43%;
+    transform:rotate(22deg);
+}
+
+.l5{
+    width:150px;
+    top:76%;
+    left:22%;
+    transform:rotate(-12deg);
+}
+
+.l6{
+    width:140px;
+    top:35%;
+    left:73%;
+    transform:rotate(30deg);
+}
+
+@keyframes lineGlow{
+
+    0%,100%{
+        opacity:.2;
+        filter:brightness(1);
+    }
+
+    50%{
+        opacity:.9;
+        filter:brightness(1.7);
+    }
+
+}
 
 .floating-card {
     background: var(--glass);

@@ -3580,7 +3580,7 @@ top:105%;
 ========================= */
 
 .project-content{
-    padding:24px;
+    padding:20px;
 
     display:flex;
     flex-direction:column;
@@ -3593,7 +3593,7 @@ top:105%;
 
     line-height:1.8;
 
-    margin:18px 0 22px;
+    margin:14px 0 16px;
 }
 
 .tech-stack{
@@ -3632,7 +3632,7 @@ top:105%;
 
     align-items:center;
 
-    margin-top:22px;
+    margin-top:16px;
 }
 
 .badge{
@@ -3768,7 +3768,7 @@ top:105%;
 
 .preview-window{
 
-    height:220px;
+    height:170px;
 
     padding:18px;
 

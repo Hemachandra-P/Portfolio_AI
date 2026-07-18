@@ -323,7 +323,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const bootScreen = document.getElementById("bootScreen");
     const progressBar = document.getElementById("progressBar");
     const loadingPercent = document.getElementById("loadingPercent");
-    const lines = document.querySelectorAll("#terminal .line");
+    const mobileProgressBar = document.getElementById("mobileProgressBar");
+    const mobilePercent = document.getElementById("mobilePercent");
+    const lines = window.innerWidth <= 768
+    ? document.querySelectorAll(".mobile-line")
+    : document.querySelectorAll("#terminal .line");
 
     let progress = 0;
     let lineIndex = 0;
@@ -353,8 +357,17 @@ const progressTimer = setInterval(() => {
 
     progress++;
 
-    progressBar.style.width = progress + "%";
-    loadingPercent.textContent = progress + "%";
+    if (progressBar)
+        progressBar.style.width = progress + "%";
+
+    if (loadingPercent)
+        loadingPercent.textContent = progress + "%";
+
+    if (mobileProgressBar)
+        mobileProgressBar.style.width = progress + "%";
+
+    if (mobilePercent)
+        mobilePercent.textContent = progress + "%";
 
     if (progress >= 100) {
 
@@ -372,4 +385,3 @@ const progressTimer = setInterval(() => {
     }
 
 }, 25);
-});

@@ -837,3 +837,32 @@ document.addEventListener("keydown", function (e) {
     }
 
 });
+function openCertificate(image, title) {
+
+    document.getElementById("certificateImage").src = image;
+
+    document.getElementById("certificateTitle").textContent = title;
+
+    document.getElementById("certificateModal")
+        .classList.add("active");
+
+}
+
+function closeCertificate() {
+
+    document.getElementById("certificateModal")
+        .classList.remove("active");
+
+}
+
+window.addEventListener("click", function (e) {
+
+    const modal = document.getElementById("certificateModal");
+
+    if (e.target === modal) {
+
+        closeCertificate();
+
+    }
+
+});

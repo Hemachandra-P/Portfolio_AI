@@ -517,7 +517,7 @@ nav.scrolled {
     overflow:hidden;
 }
 
-.line{
+.ai-line{
     position:absolute;
     height:1.5px;
     border-radius:20px;

@@ -3575,6 +3575,115 @@ top:105%;
     }
 
 }
+/* =========================
+      Browser Preview
+========================= */
+
+.project-preview{
+    background:#0b1220;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.browser-top{
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 16px;
+
+    background:#1b2433;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.browser-dots{
+    display:flex;
+    gap:8px;
+}
+
+.browser-dots span{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+}
+
+.browser-dots span:nth-child(1){
+    background:#ff5f57;
+}
+
+.browser-dots span:nth-child(2){
+    background:#febc2e;
+}
+
+.browser-dots span:nth-child(3){
+    background:#28c840;
+}
+
+.browser-url{
+
+    flex:1;
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    font-size:.82rem;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+    padding:0 20px;
+}
+
+.browser-status{
+
+    font-size:.72rem;
+
+    font-weight:600;
+
+    color:#22c55e;
+}
+
+.preview-window{
+
+    height:220px;
+
+    padding:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#0f172a;
+}
+
+.preview-placeholder{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:14px;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#999;
+
+    font-size:.9rem;
+}
 /*==================================================
                 PROJECTS SECTION V2
 ==================================================*/

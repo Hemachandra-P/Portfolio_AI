@@ -1299,6 +1299,15 @@ footer {
     }
 
 }
+@media (max-width:768px){
+
+    .profile-avatar::before{
+        animation:none;
+        opacity:.4;
+        filter:blur(12px);
+    }
+
+}
 
     .section-title h2 {
         font-size: 1.8rem;

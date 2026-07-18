@@ -3575,3 +3575,39 @@ top:105%;
     }
 
 }
+/*==================================================
+                PROJECTS SECTION V2
+==================================================*/
+
+.projects .cards-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:32px;
+    margin-top:50px;
+}
+
+.project-card{
+    background:#101827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+    position:relative;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+
+    border-color:#7c5cff;
+
+    box-shadow:
+        0 15px 45px rgba(124,92,255,.18);
+}

@@ -325,28 +325,9 @@ nav.scrolled {
 }
 
 .hero::after{
-    content:"";
-    position:absolute;
-    inset:-15%;
-    z-index:-1;
-
-    background:
-        radial-gradient(circle at 20% 30%, rgba(124,92,255,.30), transparent 30%),
-        radial-gradient(circle at 80% 20%, rgba(0,255,255,.22), transparent 26%),
-        radial-gradient(circle at 70% 80%, rgba(124,92,255,.25), transparent 30%),
-        radial-gradient(circle at 50% 50%, rgba(90,120,255,.12), transparent 40%);
-
-    filter: blur(22px);
-
-    animation: floatGlow 18s ease-in-out infinite alternate;
-
-    opacity: 1;
-
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    pointer-events: none;
+    filter: blur(18px);
+    animation: floatGlow 20s ease-in-out infinite;
+    opacity: .85;
 }
 .hero-content {
     display: grid;

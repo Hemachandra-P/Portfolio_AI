@@ -302,6 +302,76 @@ nav.scrolled {
     isolation: isolate;
 }
 /* ==========================================
+        FLOATING PARTICLES
+========================================== */
+
+.floating-particles{
+
+    position: fixed;
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+.particle{
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #7c5cff;
+
+    opacity: .35;
+
+    box-shadow:
+        0 0 8px rgba(124,92,255,.8);
+
+    animation: particleFloat linear infinite;
+
+}
+
+@keyframes particleFloat{
+
+    from{
+
+        transform:
+            translateY(110vh);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.35;
+
+    }
+
+    85%{
+
+        opacity:.35;
+
+    }
+
+    to{
+
+        transform:
+            translateY(-120px);
+
+        opacity:0;
+
+    }
+
+}
+/* ==========================================
    AI GRID BACKGROUND
 ========================================== */
 

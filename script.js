@@ -372,3 +372,4 @@ const progressTimer = setInterval(() => {
     }
 
 }, 25);
+});

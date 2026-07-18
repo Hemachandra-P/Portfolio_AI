@@ -1860,88 +1860,221 @@ html {
     position:relative;
     z-index:2;
 }
+/* ============================
+   JARVIS HUD SCANNER
+============================ */
 
 .hud-circle{
     position:absolute;
-    top:45%;
     left:50%;
+    top:55%;
     transform:translate(-50%,-50%);
-    width:320px;
-    height:320px;
+    width:700px;
+    height:700px;
     pointer-events:none;
-    z-index:-1;
+    z-index:-2;
+    opacity:.9;
 }
+
+/* Base Ring */
 
 .hud-ring{
     position:absolute;
     inset:0;
     border-radius:50%;
-    border:2px solid rgba(124,92,255,.35);
+    border:2px solid rgba(0,255,255,.20);
     box-shadow:
-        0 0 25px rgba(124,92,255,.35),
-        inset 0 0 25px rgba(124,92,255,.15);
+        0 0 25px rgba(0,255,255,.18),
+        inset 0 0 25px rgba(124,92,255,.08);
 }
+
+/* Outer Ring */
 
 .ring1{
-    animation:rotateClockwise 10s linear infinite;
+
+    inset:0;
+
+    border:2px solid rgba(0,255,255,.22);
+
+    animation:rotateClockwise 18s linear infinite;
+
 }
+
+/* Second Ring */
 
 .ring2{
-    width:260px;
-    height:260px;
-    top:30px;
-    left:30px;
-    border-color:rgba(0,255,213,.45);
-    animation:rotateAnti 7s linear infinite;
+
+    inset:60px;
+
+    width:auto;
+    height:auto;
+    top:60px;
+    left:60px;
+
+    border:2px solid rgba(124,92,255,.35);
+
+    animation:rotateAnti 12s linear infinite;
+
 }
+
+/* Third Ring */
 
 .ring3{
-    width:180px;
-    height:180px;
-    top:70px;
-    left:70px;
-    border-color:rgba(255,255,255,.2);
-    animation:rotateClockwise 5s linear infinite;
+
+    inset:140px;
+
+    width:auto;
+    height:auto;
+    top:140px;
+    left:140px;
+
+    border:1px dashed rgba(255,255,255,.18);
+
+    animation:rotateClockwise 8s linear infinite;
+
 }
+
+/* Fourth Ring */
+
+.ring4{
+
+    position:absolute;
+
+    inset:220px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(0,255,255,.15);
+
+    animation:rotateAnti 22s linear infinite;
+
+}
+
+/* Fifth Ring */
+
+.ring5{
+
+    position:absolute;
+
+    inset:290px;
+
+    border-radius:50%;
+
+    border:1px dashed rgba(124,92,255,.18);
+
+    animation:rotateClockwise 28s linear infinite;
+
+}
+
+/* AI Core */
 
 .hud-center{
+
     position:absolute;
-    width:18px;
-    height:18px;
-    background:#00ffd5;
+
+    width:22px;
+    height:22px;
+
+    background:#00ffff;
+
     border-radius:50%;
+
     top:50%;
     left:50%;
+
     transform:translate(-50%,-50%);
+
     box-shadow:
-        0 0 25px #00ffd5,
-        0 0 50px #7c5cff;
-    animation:pulseCore 1.5s infinite;
+        0 0 25px #00ffff,
+        0 0 60px #00ffff,
+        0 0 120px #7c5cff;
+
+    animation:pulseCore 1.8s infinite;
+
 }
+
+/* Radar Sweep */
 
 .hud-circle::before{
+
     content:"";
+
     position:absolute;
-    inset:15px;
+
+    inset:0;
+
     border-radius:50%;
-    border:1px dashed rgba(255,255,255,.12);
-    animation:rotateAnti 14s linear infinite;
+
+    background:
+    conic-gradient(
+
+        transparent 0deg,
+
+        transparent 320deg,
+
+        rgba(0,255,255,.05) 330deg,
+
+        rgba(0,255,255,.65) 345deg,
+
+        rgba(255,255,255,.9) 350deg,
+
+        transparent 360deg
+
+    );
+
+    animation:rotateClockwise 3.2s linear infinite;
+
 }
 
+/* Scanner Line */
+
 .hud-circle::after{
+
     content:"";
+
     position:absolute;
+
     top:50%;
     left:50%;
-    width:320px;
-    height:2px;
-    background:linear-gradient(90deg,
+
+    width:700px;
+    height:4px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
         transparent,
-        #00ffd5,
-        transparent);
+
+        rgba(0,255,255,.2),
+
+        #00ffff,
+
+        #8b5cf6,
+
+        rgba(0,255,255,.2),
+
+        transparent
+
+    );
+
     transform:translate(-50%,-50%);
-    animation:scannerSweep 2.5s linear infinite;
-    opacity:.8;
+
+    animation:scannerSweep 3s linear infinite;
+
+    opacity:.95;
+
+}
+
+/* Outer Glow */
+
+.hud-circle{
+
+    filter:drop-shadow(0 0 30px rgba(0,255,255,.20))
+           drop-shadow(0 0 70px rgba(124,92,255,.15));
+
 }
 
 @keyframes rotateClockwise{

@@ -3581,30 +3581,24 @@ top:105%;
 
 .project-content{
     padding:20px;
-
     display:flex;
     flex-direction:column;
-
     flex:1;
 }
 
 .project-content p{
     color:#cbd5e1;
-
-    line-height:1.8;
-
-    margin:14px 0 16px;
+    line-height:1.7;
+    margin:14px 0;
 }
 
 .tech-stack{
-
     display:flex;
-
     flex-wrap:wrap;
-
     gap:10px;
 
     margin-top:auto;
+    margin-bottom:18px;
 }
 
 .tech-stack span{
@@ -3627,27 +3621,24 @@ top:105%;
 .project-footer{
     display:flex;
     align-items:center;
+    justify-content:space-between;
     margin-top:16px;
+    width:100%;
 }
 
-
 .badge{
-
     background:#2b1f4f;
-
     color:#f8d66d;
-
     padding:8px 14px;
-
     border-radius:999px;
-
     font-size:.8rem;
-
     font-weight:600;
+    white-space:nowrap;
 }
 
 .project-actions{
     display:flex;
+    align-items:center;
     gap:12px;
     margin-left:auto;
 }
@@ -3815,6 +3806,8 @@ top:105%;
 
     display:flex;
     flex-direction:column;
+
+    height:640px;   /* Adjust later if needed */
 
     transition:
         transform .35s ease,

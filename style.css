@@ -722,40 +722,6 @@ nav.scrolled {
         avatarGlow 5s ease-in-out infinite;
 
 }
-.profile-avatar::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-3px;
-
-    border-radius:50%;
-
-    background:
-        conic-gradient(
-            #7c5cff,
-            #00e5ff,
-            transparent,
-            #7c5cff);
-
-    z-index:-2;
-
-    animation:
-        avatarRotate 14s linear infinite;
-
-}
-@keyframes avatarRotate{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
-
-}
 @keyframes avatarGlow{
 
     0%,100%{

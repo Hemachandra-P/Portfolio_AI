@@ -651,12 +651,12 @@ nav.scrolled {
     position:absolute;
 
     top:0;
-    left:16px;
-    right:16px;
+    left:0;
+    right:0;
 
     height:4px;
 
-    border-radius:10px;
+    border-radius:28px 28px 0 0;
 
     background:linear-gradient(
         90deg,

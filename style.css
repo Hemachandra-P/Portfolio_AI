@@ -669,15 +669,35 @@ nav.scrolled {
     z-index:2;
 }
 
-.floating-card:hover{
+@media (hover: hover) and (pointer: fine){
 
-    transform:translateY(-10px);
+    .floating-card:hover{
 
-    border-color:rgba(124,92,255,.45);
+        transform:translateY(-10px);
 
-    box-shadow:
-        0 28px 70px rgba(0,0,0,.45),
-        0 0 55px rgba(124,92,255,.25);
+        border-color:rgba(124,92,255,.45);
+
+        box-shadow:
+            0 28px 70px rgba(0,0,0,.45),
+            0 0 55px rgba(124,92,255,.25);
+
+    }
+
+}
+@media (hover: none){
+
+    .floating-card:hover{
+
+        transform:none;
+
+        border-color:rgba(255,255,255,.12);
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,.35),
+            0 0 40px rgba(124,92,255,.12);
+
+    }
+
 }
 /* ===========================
    PROFILE AVATAR

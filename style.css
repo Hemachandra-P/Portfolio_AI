@@ -415,6 +415,97 @@ nav.scrolled {
 .hero-visual {
     position: relative;
 }
+/*=========================================
+        AI NEURAL NODES
+=========================================*/
+
+.ai-nodes{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    overflow:hidden;
+}
+
+.node{
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#7c5cff;
+
+    box-shadow:
+        0 0 8px #7c5cff,
+        0 0 18px rgba(124,92,255,.8),
+        0 0 35px rgba(124,92,255,.4);
+
+    animation:nodePulse 4s ease-in-out infinite,
+              nodeFloat 8s ease-in-out infinite;
+}
+
+/* Different sizes */
+
+.n2,.n5,.n8{
+    width:6px;
+    height:6px;
+}
+
+.n3,.n7,.n10{
+    width:10px;
+    height:10px;
+}
+
+/* Positions */
+
+.n1{top:12%;left:10%;animation-delay:.2s;}
+.n2{top:20%;left:28%;animation-delay:1s;}
+.n3{top:10%;left:48%;animation-delay:2s;}
+.n4{top:28%;left:72%;animation-delay:3s;}
+.n5{top:18%;left:90%;animation-delay:1.5s;}
+
+.n6{top:55%;left:15%;animation-delay:.5s;}
+.n7{top:48%;left:40%;animation-delay:2.5s;}
+.n8{top:68%;left:62%;animation-delay:1.8s;}
+.n9{top:82%;left:28%;animation-delay:3.2s;}
+.n10{top:78%;left:88%;animation-delay:2.8s;}
+
+/* Glow */
+
+@keyframes nodePulse{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:.5;
+    }
+
+    50%{
+        transform:scale(1.8);
+        opacity:1;
+    }
+
+}
+
+/* Floating */
+
+@keyframes nodeFloat{
+
+    0%,100%{
+        translate:0 0;
+    }
+
+    25%{
+        translate:4px -6px;
+    }
+
+    50%{
+        translate:-5px 4px;
+    }
+
+    75%{
+        translate:6px 3px;
+    }
+
+}
 
 .floating-card {
     background: var(--glass);

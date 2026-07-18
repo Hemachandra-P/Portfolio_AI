@@ -3603,19 +3603,31 @@ top:105%;
 
 .tech-stack span{
 
-    background:rgba(124,92,255,.12);
+    background:rgba(124,92,255,.10);
 
-    color:#bfa8ff;
+    color:#bda7ff;
 
-    border:1px solid rgba(124,92,255,.35);
+    border:1px solid rgba(124,92,255,.25);
 
-    padding:8px 14px;
+    padding:7px 14px;
 
-    border-radius:999px;
+    border-radius:30px;
 
-    font-size:.82rem;
+    font-size:.78rem;
 
     font-weight:600;
+
+    transition:.3s;
+}
+
+.tech-stack span:hover{
+
+    background:#7c5cff;
+
+    color:white;
+
+    transform:translateY(-3px);
+
 }
 
 .project-footer{
@@ -3646,29 +3658,26 @@ top:105%;
 .project-github,
 .project-details{
 
-    width:46px;
-
-    height:46px;
+    width:44px;
+    height:44px;
 
     border-radius:50%;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
-    background:#1e293b;
+    background:#1f2937;
 
     border:1px solid rgba(255,255,255,.08);
 
     color:white;
 
-    text-decoration:none;
-
-    cursor:pointer;
-
     transition:.3s;
+
+    font-size:1rem;
+
+    text-decoration:none;
 }
 
 .project-github:hover,
@@ -3676,7 +3685,10 @@ top:105%;
 
     background:#7c5cff;
 
-    transform:translateY(-4px);
+    transform:
+        translateY(-3px)
+        rotate(5deg);
+
 }
 /* =========================
       Browser Preview
@@ -3770,22 +3782,22 @@ top:105%;
 .preview-placeholder{
 
     width:100%;
-
     height:100%;
 
     border-radius:14px;
 
     background:white;
 
+    box-shadow:
+        inset 0 0 25px rgba(0,0,0,.08);
+
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     color:#999;
 
-    font-size:.9rem;
+    overflow:hidden;
 }
 /*==================================================
                 PROJECTS SECTION V2
@@ -3797,7 +3809,46 @@ top:105%;
     gap:32px;
     margin-top:50px;
 }
+.project-card::before{
 
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    padding:1px;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent,
+            rgba(124,92,255,.5),
+            transparent
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.35s;
+
+    pointer-events:none;
+}
+
+.project-card:hover::before{
+
+    opacity:1;
+
+}
 .project-card{
     background:#101827;
     border:1px solid rgba(255,255,255,.08);
@@ -3818,10 +3869,15 @@ top:105%;
 }
 
 .project-card:hover{
-    transform:translateY(-8px);
+
+    transform:
+        translateY(-10px)
+        scale(1.015);
 
     border-color:#7c5cff;
 
     box-shadow:
-        0 15px 45px rgba(124,92,255,.18);
+        0 20px 60px rgba(124,92,255,.20),
+        0 0 35px rgba(124,92,255,.12);
+
 }

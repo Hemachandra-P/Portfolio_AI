@@ -650,11 +650,9 @@ nav.scrolled {
     position:absolute;
 
     top:0;
+    left:15%;
     width:70%;
     height:4px;
-
-    left:50%;
-    transform:translateX(-50%);
 
     border-radius:50px;
 

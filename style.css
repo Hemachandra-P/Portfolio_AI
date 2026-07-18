@@ -647,17 +647,14 @@ nav.scrolled {
 
 .floating-card::before{
     content:"";
-
     position:absolute;
 
-    top:0;
-    left:0;
-    right:0;
+    top:12px;
+    left:24px;
+    right:24px;
 
-    height:4px;
-
-    border-top-left-radius:28px;
-    border-top-right-radius:28px;
+    height:3px;
+    border-radius:50px;
 
     background:linear-gradient(
         90deg,
@@ -667,10 +664,7 @@ nav.scrolled {
     );
 
     background-size:250% 100%;
-
     animation:borderFlow 6s linear infinite;
-
-    overflow:hidden;
 }
 .floating-card:hover{
 

@@ -347,41 +347,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Progress */
 
-function animateProgress() {
+/* Progress */
 
-    progress += 0.8; // Change to 0.6 for slower, 1 for faster
+const progressTimer = setInterval(() => {
 
-    if (progress > 100) {
-        progress = 100;
-    }
+    progress++;
 
-    progressBar.style.transform = `scaleX(${progress / 100})`;
+    progressBar.style.width = progress + "%";
+    loadingPercent.textContent = progress + "%";
 
-    loadingPercent.textContent = Math.floor(progress) + "%";
+    if (progress >= 100) {
 
-    if (progress < 100) {
-
-        requestAnimationFrame(animateProgress);
-
-    } else {
+        clearInterval(progressTimer);
 
         document.body.classList.add("loader-finished");
 
+        bootScreen.style.transition = "opacity .6s ease";
+        bootScreen.style.opacity = "0";
+
         setTimeout(() => {
-
-            bootScreen.style.transition = "opacity .5s ease";
-            bootScreen.style.opacity = "0";
-
-            setTimeout(() => {
-
-                bootScreen.remove();
-
-            }, 500);
-
-        }, 200);
+            bootScreen.remove();
+        }, 600);
 
     }
 
-}
-
-requestAnimationFrame(animateProgress);
+}, 25);

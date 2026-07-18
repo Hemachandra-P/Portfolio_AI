@@ -2964,45 +2964,8 @@ top:105%;
    RESPONSIVE
 ======================= */
 
-@media(max-width:768px){
-
-.boot-logo{
-
-font-size:34px;
-
-}
-
-.boot-subtitle{
-
-font-size:11px;
-
-letter-spacing:2px;
-
-}
-
-.hud-circle{
-
-width:240px;
-
-height:240px;
-
-}
-
-.system-status{
-
-flex-direction:column;
-
-}
-
-.terminal-body{
-
-padding:18px;
-
-}
-
-}
 /* ==========================================================
-   MOBILE JARVIS LOADER
+   MOBILE OPTIMIZATION
 ========================================================== */
 
 @media screen and (max-width:768px){
@@ -3010,209 +2973,169 @@ padding:18px;
     /* Boot Container */
 
     .boot-container{
-
         width:95%;
         max-width:360px;
-        padding:0 12px;
-
-    }
-
-    /* Scanner */
-
-    .hud-circle{
-
-        width:320px;
-        height:320px;
-
-        top:45%;
-
-        opacity:.55;
-
-        filter:
-        drop-shadow(0 0 18px rgba(0,255,255,.18));
-
-    }
-
-    /* Hide extra rings */
-
-    .ring4,
-    .ring5{
-
-        display:none;
-
-    }
-
-    /* Hide extra orbit dots */
-
-    .orbit4,
-    .orbit5,
-    .orbit6{
-
-        display:none;
-
-    }
-
-    /* Reduce radar brightness */
-
-    .hud-circle::after{
-
-        width:320px;
-        height:3px;
-
+        padding:0 15px;
     }
 
     /* Logo */
 
     .boot-logo{
-
-        font-size:26px;
-
+        font-size:28px;
         letter-spacing:2px;
-
         margin-bottom:10px;
-
     }
 
     .boot-subtitle{
-
         font-size:10px;
-
         letter-spacing:1px;
-
-        margin-bottom:20px;
-
+        margin-bottom:18px;
     }
 
-    /* Glass Terminal */
+    /* HUD */
+
+    .hud-circle{
+        width:260px;
+        height:260px;
+        top:48%;
+        opacity:.45;
+        filter:none;
+        will-change:transform;
+        transform:translate(-50%,-50%) translateZ(0);
+    }
+
+    /* Hide heavy effects */
+
+    .ring4,
+    .ring5,
+    .orbit4,
+    .orbit5,
+    .orbit6{
+        display:none;
+    }
+
+    /* Radar */
+
+    .hud-circle::after{
+        width:260px;
+        height:2px;
+        filter:none;
+    }
+
+    /* Terminal */
 
     #terminal{
-
         width:100%;
-
         border-radius:16px;
 
+        /* Disable expensive blur on mobile */
+
+        backdrop-filter:none;
+        -webkit-backdrop-filter:none;
+
+        background:rgba(8,18,40,.92);
+
+        box-shadow:
+            0 8px 20px rgba(0,255,255,.08);
+
+        will-change:transform;
+        transform:translateZ(0);
+    }
+
+    /* Disable glass overlays */
+
+    #terminal::before,
+    #terminal::after{
+        display:none;
     }
 
     .terminal-header{
-
         padding:10px 14px;
-
     }
 
     .terminal-title{
-
         font-size:10px;
-
     }
 
     .terminal-body{
-
-        padding:18px;
-
-        min-height:180px;
-
+        padding:16px;
+        min-height:160px;
     }
 
     .line{
-
         font-size:12px;
-
-        margin:12px 0;
-
+        margin:10px 0;
         word-break:break-word;
-
     }
 
     /* Status */
 
     .system-status{
-
         flex-direction:column;
-
         gap:8px;
-
-        margin-top:18px;
-
+        margin-top:16px;
     }
 
     .status-item{
-
+        width:100%;
         font-size:11px;
-
         padding:10px;
-
     }
 
     /* Progress */
 
     .progress{
-
-        height:7px;
-
-        margin-top:18px;
-
+        height:6px;
+        margin-top:16px;
     }
 
     #loadingPercent{
-
         font-size:12px;
-
     }
 
-    /* Less particles for better FPS */
+    /* Reduce particles */
 
-    #particles span:nth-child(n+20){
-
+    #particles span:nth-child(n+10){
         display:none;
+    }
 
+    /* Disable expensive effects */
+
+    .ambient-glow,
+    .scanlines{
+        display:none;
     }
 
 }
+
+
+/* ==========================================================
+   SMALL PHONES
+========================================================== */
+
 @media screen and (max-width:480px){
 
-    .hud-circle{
-
-        width:240px;
-        height:240px;
-
-        top:42%;
-
-        opacity:.45;
-
-    }
-
     .boot-logo{
-
-        font-size:21px;
-
+        font-size:22px;
     }
 
     .boot-subtitle{
-
         font-size:9px;
+    }
 
+    .hud-circle{
+        width:220px;
+        height:220px;
+        top:47%;
     }
 
     .terminal-body{
-
-        min-height:160px;
-
-        padding:15px;
-
+        min-height:140px;
+        padding:14px;
     }
 
     .line{
-
         font-size:11px;
-
     }
-
-}
-#terminal{
-
-    backdrop-filter:none;
-    -webkit-backdrop-filter:none;
-
-    background:rgba(8,18,40,.82);
 
 }

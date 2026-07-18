@@ -2534,7 +2534,6 @@ to{transform:rotate(360deg) translateX(-150px);}
 /* =======================
    GLASS TERMINAL
 ======================= */
-
 #terminal{
     position:relative;
     overflow:hidden;
@@ -2556,7 +2555,12 @@ to{transform:rotate(360deg) translateX(-150px);}
         0 0 35px rgba(0,255,255,.08);
 
     padding:0;
+
+    transform:translateZ(0);
+    will-change:transform;
+    backface-visibility:hidden;
 }
+
 /* terminal glow */
 
 #terminal::before{
@@ -2579,6 +2583,7 @@ to{transform:rotate(360deg) translateX(-150px);}
     pointer-events:none;
 
 }
+
 #terminal::after{
 
     content:"";
@@ -2592,9 +2597,7 @@ to{transform:rotate(360deg) translateX(-150px);}
     border:1px solid rgba(0,255,255,.15);
 
     box-shadow:
-
         inset 0 0 25px rgba(0,255,255,.08),
-
         0 0 18px rgba(124,92,255,.12);
 
     pointer-events:none;
@@ -2614,6 +2617,7 @@ to{transform:rotate(360deg) translateX(-150px);}
     border-bottom:1px solid rgba(255,255,255,.08);
 
     background:rgba(255,255,255,.03);
+
 }
 
 .dot{
@@ -2622,71 +2626,118 @@ to{transform:rotate(360deg) translateX(-150px);}
     height:12px;
 
     border-radius:50%;
+
 }
 
 .red{
-
-background:#ff5f56;
-
+    background:#ff5f56;
 }
 
 .yellow{
-
-background:#ffbd2f;
-
+    background:#ffbd2f;
 }
 
 .green{
-
-background:#27c93f;
-
+    background:#27c93f;
 }
 
 .terminal-title{
 
-margin-left:auto;
+    margin-left:auto;
 
-font-size:12px;
+    font-size:12px;
 
-letter-spacing:2px;
+    letter-spacing:2px;
 
-color:#79f8ff;
+    color:#79f8ff;
 
-font-weight:600;
+    font-weight:600;
 
 }
 
 .terminal-body{
 
-padding:28px;
+    padding:28px;
 
-text-align:left;
+    text-align:left;
 
-font-family:Consolas,monospace;
+    font-family:Consolas,monospace;
 
-min-height:230px;
+    min-height:230px;
+
+    transform:translateZ(0);
+    will-change:transform;
 
 }
 
 .line{
 
-opacity:0;
+    opacity:0;
 
-margin:16px 0;
+    margin:16px 0;
 
-font-size:15px;
+    font-size:15px;
 
-color:#dce8ff;
+    color:#dce8ff;
 
-letter-spacing:.5px;
+    letter-spacing:.5px;
 
 }
 
 .success{
 
-color:#64ff9f;
+    color:#64ff9f;
 
-font-weight:600;
+    font-weight:600;
+
+}
+
+/* ================= MOBILE OPTIMIZATION ================= */
+
+@media screen and (max-width:768px){
+
+    #terminal{
+
+        background:rgba(8,18,40,.95);
+
+        backdrop-filter:none !important;
+        -webkit-backdrop-filter:none !important;
+
+        box-shadow:
+            0 8px 18px rgba(0,0,0,.35);
+
+        border:1px solid rgba(255,255,255,.08);
+
+    }
+
+    #terminal::before,
+    #terminal::after{
+
+        display:none;
+
+    }
+
+    .terminal-header{
+
+        background:rgba(255,255,255,.02);
+
+    }
+
+    .terminal-body{
+
+        padding:20px;
+
+        min-height:180px;
+
+    }
+
+    .line{
+
+        font-size:13px;
+
+        margin:12px 0;
+
+    }
 
 }
 

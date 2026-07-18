@@ -337,7 +337,29 @@ nav.scrolled {
 
     animation:floatGlow 12s ease-in-out infinite alternate;
 }
+@keyframes gridMove{
 
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(40px);
+    }
+
+}
+
+@keyframes floatGlow{
+
+    from{
+        transform:translate(0,0) scale(1);
+    }
+
+    to{
+        transform:translate(-40px,-30px) scale(1.15);
+    }
+
+}
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;

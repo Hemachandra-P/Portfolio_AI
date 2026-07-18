@@ -2890,3 +2890,133 @@ top:105%;
 
     will-change: transform, opacity;
 }
+/* ==========================================
+   LOADER DEVICE SWITCH
+========================================== */
+
+.desktop-loader{
+    display:block;
+}
+
+.mobile-loader{
+    display:none;
+}
+/* ==========================================
+   MOBILE AI LOADER
+========================================== */
+
+.mobile-loader{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+    background:#05070d;
+    color:#00f7ff;
+    font-family:"Courier New", monospace;
+    text-align:center;
+}
+
+.mobile-logo{
+    font-size:2rem;
+    font-weight:700;
+    letter-spacing:4px;
+    margin-bottom:10px;
+    color:#ffffff;
+}
+
+.mobile-subtitle{
+    color:#8ca3af;
+    margin-bottom:30px;
+    font-size:.9rem;
+}
+
+.mobile-terminal{
+
+    width:100%;
+    max-width:360px;
+
+    background:#0b1220;
+
+    border:1px solid rgba(0,247,255,.25);
+
+    border-radius:12px;
+
+    padding:18px;
+
+    text-align:left;
+
+    box-shadow:0 0 20px rgba(0,247,255,.08);
+
+}
+
+.mobile-line{
+
+    color:#d1d5db;
+
+    margin:10px 0;
+
+    font-size:.9rem;
+
+}
+
+.mobile-line.success{
+
+    color:#22c55e;
+
+}
+
+.mobile-progress{
+
+    margin-top:20px;
+
+    height:8px;
+
+    background:#1f2937;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+#mobileProgressBar{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#06b6d4,#22d3ee);
+
+    transition:width .25s linear;
+
+}
+
+#mobilePercent{
+
+    margin-top:12px;
+
+    text-align:right;
+
+    color:#ffffff;
+
+    font-weight:600;
+
+}
+@media (max-width:768px){
+
+.desktop-loader{
+
+    display:none !important;
+
+}
+
+.mobile-loader{
+
+    display:flex !important;
+
+}
+
+}

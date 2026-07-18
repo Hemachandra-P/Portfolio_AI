@@ -3625,15 +3625,11 @@ top:105%;
 }
 
 .project-footer{
-
     display:flex;
-
-    justify-content:space-between;
-
     align-items:center;
-
     margin-top:16px;
 }
+
 
 .badge{
 
@@ -3651,10 +3647,9 @@ top:105%;
 }
 
 .project-actions{
-
     display:flex;
-
     gap:12px;
+    margin-left:auto;
 }
 
 .project-github,

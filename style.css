@@ -678,33 +678,25 @@ nav.scrolled {
 
 }
 .profile-avatar{
-
-    position:relative;
-
     width:160px;
     height:160px;
 
     border-radius:50%;
+    background:var(--gradient-1);
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    margin-bottom:28px;
+    margin:0 auto 20px;
+
+    border:5px solid rgba(255,255,255,.1);
 
     overflow:hidden;
 
-    background:
-        linear-gradient(
-        135deg,
-        #7c5cff,
-        #00e5ff);
-
-    padding:4px;
-
-    transition:.45s;
-
+    transition:.3s ease;
 }
+
 .profile-avatar::before{
 
     content:"";
@@ -796,31 +788,16 @@ nav.scrolled {
 }
 
 .profile-avatar img{
-
     width:100%;
     height:100%;
-
-    border-radius:50%;
-
     object-fit:cover;
-
-    background:#0f172a;
-
-    transition:
-        transform .45s ease,
-        filter .45s ease;
-
+    border-radius:50%;
+    transition:.3s ease;
 }
 
 /* Glowing effect on hover */
 .profile-avatar:hover img{
-
-    transform:scale(1.08);
-
-    filter:
-        brightness(1.08)
-        saturate(1.12);
-
+    transform:scale(1.05);
 }
 
 
@@ -1337,31 +1314,9 @@ footer {
     }
 }
 
-@media (max-width: 480px) {
-    .hero {
-        padding: 120px 0 60px;
-        min-height: 85vh;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    .floating-card {
-        padding: 20px;
-    }
-
-   @media(max-width:768px){
-
 .profile-avatar{
-
-    width:140px;
-    height:140px;
-
+    width:130px;
+    height:130px;
 }
 
 }

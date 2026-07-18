@@ -327,23 +327,26 @@ nav.scrolled {
 .hero::after{
     content:"";
     position:absolute;
-    inset:-5%;
+    inset:-15%;
     z-index:-1;
 
     background:
-        radial-gradient(circle at 25% 30%, rgba(124,92,255,.18), transparent 22%),
-        radial-gradient(circle at 80% 25%, rgba(0,255,255,.14), transparent 20%),
-        radial-gradient(circle at 70% 75%, rgba(124,92,255,.16), transparent 22%);
+        radial-gradient(circle at 20% 30%, rgba(124,92,255,.30), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(0,255,255,.22), transparent 26%),
+        radial-gradient(circle at 70% 80%, rgba(124,92,255,.25), transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(90,120,255,.12), transparent 40%);
 
-    filter: blur(16px);
+    filter: blur(22px);
 
     animation: floatGlow 18s ease-in-out infinite alternate;
 
-    opacity: .65;
+    opacity: 1;
 
     will-change: transform;
     transform: translateZ(0);
-    pointer-events:none;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
 }
 .hero-content {
     display: grid;

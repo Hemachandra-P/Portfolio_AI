@@ -4613,3 +4613,32 @@ html {
     letter-spacing: .5px;
 
 }
+
+.footer-logo {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 3rem;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
+
+    background: var(--gradient-1);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+.footer-logo a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}

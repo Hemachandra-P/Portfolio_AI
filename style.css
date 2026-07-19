@@ -151,14 +151,34 @@ nav.scrolled {
 }
 
 .logo {
-    font-weight: 800;
-    font-size: 1.8rem;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 3rem;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
     background: var(--gradient-1);
+
     -webkit-background-clip: text;
     background-clip: text;
+
     color: transparent;
+
     text-decoration: none;
+
     z-index: 1001;
+
+    transition: .3s ease;
+
+}
+
+.logo:hover{
+
+    transform: scale(1.05);
+
 }
 
 .nav-links {

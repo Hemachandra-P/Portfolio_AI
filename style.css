@@ -3951,11 +3951,16 @@ html {
 
 .browser-status {
 
-    color: #22c55e;
+    padding: 5px 12px;
 
-    font-size: .72rem;
+    border-radius: 20px;
 
-    font-weight: 600;
+    background:
+        rgba(34, 197, 94, .12);
+
+    border:
+        1px solid rgba(34, 197, 94, .25);
+
 }
 
 .preview-window {
@@ -4060,6 +4065,8 @@ html {
 ==================================================*/
 
 .project-card {
+    --x: 50%;
+    --y: 50%;
 
     position: relative;
 
@@ -4121,6 +4128,87 @@ html {
     pointer-events: none;
 }
 
+.project-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 20px;
+
+    background:
+        radial-gradient(220px circle at var(--x) var(--y),
+            rgba(124, 92, 255, .18),
+            transparent 65%);
+
+    opacity: 0;
+
+    transition: opacity .3s;
+
+    pointer-events: none;
+
+}
+
+.project-card .shine {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+}
+
+.project-card .shine::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -40%;
+
+    left: -120%;
+
+    width: 60%;
+
+    height: 180%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, .12),
+            transparent);
+
+    transform: rotate(20deg);
+
+}
+
+.project-card:hover .shine::before {
+
+    animation: shine .8s ease;
+
+}
+
+@keyframes shine {
+
+    0% {
+
+        left: -120%;
+
+    }
+
+    100% {
+
+        left: 150%;
+
+    }
+
+}
+
 .project-card:hover {
 
     transform: translateY(-8px);
@@ -4134,6 +4222,12 @@ html {
 .project-card:hover::before {
 
     opacity: 1;
+}
+
+.project-card:hover::after {
+
+    opacity: 1;
+
 }
 
 /*==================================================

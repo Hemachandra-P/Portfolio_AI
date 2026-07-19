@@ -4565,3 +4565,14 @@ html {
     }
 
 }
+#about .section-title h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}

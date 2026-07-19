@@ -541,20 +541,23 @@ const projects = {
     },
     waterQuality: {
 
-        title: "Water Quality Prediction Using Machine Learning",
+        title: "AI-Powered Ganga Water Quality Assessment System",
 
-        overview: "A machine learning project that predicts water quality by analyzing environmental and chemical parameters, helping identify whether water is suitable for use based on historical data.",
+        description: "An academic research project applying Machine Learning techniques to analyze Ganga River water quality parameters and support intelligent environmental monitoring through predictive analytics.",
 
-        problem: "Assessing water quality manually is time-consuming and requires extensive laboratory testing, making continuous monitoring difficult.",
+        overview: "An academic research project focused on developing an AI-powered system for assessing Ganga River water quality using historical environmental datasets. The project investigates how machine learning can assist environmental monitoring by analyzing multiple water quality parameters and generating predictive insights.",
 
-        solution: "Built a machine learning pipeline that preprocesses water quality datasets, analyzes multiple environmental parameters, and predicts overall water quality using supervised learning techniques.",
+        problem: "Traditional water quality assessment relies on laboratory testing and manual analysis, making continuous environmental monitoring time-consuming and resource-intensive. This research explores how machine learning can assist in predicting water quality using historical environmental data.",
+
+        solution: "Designed and developed a machine learning pipeline that preprocesses environmental datasets, performs feature engineering, trains predictive models, and generates water quality assessments to support environmental research and decision-making.",
 
         features: [
-            "Water Quality Prediction",
+            "Academic Research Project",
+            "Ganga River Water Quality Assessment",
+            "Machine Learning Prediction",
             "Environmental Data Analysis",
-            "Data Visualization",
-            "Machine Learning Classification",
-            "Feature Analysis"
+            "Feature Engineering",
+            "Predictive Analytics"
         ],
 
         technologies: [
@@ -567,74 +570,84 @@ const projects = {
         ],
 
         workflow: [
-            "Dataset Collection",
-            "Data Cleaning",
+            "Historical Dataset Collection",
+            "Data Preprocessing",
             "Exploratory Data Analysis",
             "Feature Engineering",
             "Model Training",
-            "Prediction"
+            "Model Evaluation",
+            "Water Quality Prediction"
         ],
 
-        outcome: "Successfully developed a predictive model capable of analyzing multiple water quality parameters and assisting in water quality assessment through machine learning techniques.",
+        outcome: "Successfully developed a machine learning-based environmental assessment system capable of analyzing historical Ganga River water quality data and generating predictive insights for academic research and environmental monitoring.",
 
         learnings: [
-            "Environmental Data Analysis",
-            "Machine Learning Pipeline",
+            "Environmental AI",
+            "Machine Learning",
+            "Predictive Analytics",
             "Feature Engineering",
-            "Data Visualization",
-            "Predictive Modeling"
+            "Environmental Data Science",
+            "Research Methodology"
         ],
 
         github: "YOUR_WATER_QUALITY_GITHUB_LINK"
 
     },
-    waterQuality: {
+    healthDiagnosis: {
 
-        title: "Water Quality Prediction Using Machine Learning",
+        title: "Web-Based Health Diagnosis System",
 
-        overview: "A machine learning project that predicts water quality by analyzing environmental and chemical parameters, helping identify whether water is suitable for use based on historical data.",
+        description: "An academic research project investigating the application of Convolutional Neural Networks (CNN) and Machine Learning techniques for intelligent healthcare diagnosis through a web-based decision support system.",
 
-        problem: "Assessing water quality manually is time-consuming and requires extensive laboratory testing, making continuous monitoring difficult.",
+        overview: "An academic research project exploring the application of Convolutional Neural Networks (CNN) and Machine Learning algorithms for intelligent healthcare diagnosis. The system integrates deep learning with a web-based platform to support preliminary disease prediction and demonstrate the potential of AI in healthcare decision support.",
 
-        solution: "Built a machine learning pipeline that preprocesses water quality datasets, analyzes multiple environmental parameters, and predicts overall water quality using supervised learning techniques.",
+        problem: "Early disease diagnosis is critical for effective treatment, but timely medical assessment is not always accessible. This research investigates how CNN-based deep learning models can assist in preliminary disease prediction using medical data within an intelligent web application.",
+
+        solution: "Designed and developed a CNN-based healthcare diagnosis system by training deep learning and machine learning models on medical datasets and integrating them into a Django-based web application that provides preliminary diagnostic predictions through an intuitive user interface.",
 
         features: [
-            "Water Quality Prediction",
-            "Environmental Data Analysis",
-            "Data Visualization",
+            "Academic Research Project",
+            "CNN-Based Disease Prediction",
             "Machine Learning Classification",
-            "Feature Analysis"
+            "Healthcare Decision Support",
+            "Interactive Web Application",
+            "Responsive User Interface"
         ],
 
         technologies: [
             "Python",
+            "TensorFlow",
+            "Keras",
+            "CNN",
             "Scikit-learn",
-            "Pandas",
-            "NumPy",
-            "Matplotlib",
-            "Jupyter Notebook"
+            "Django",
+            "HTML",
+            "CSS",
+            "JavaScript"
         ],
 
         workflow: [
-            "Dataset Collection",
-            "Data Cleaning",
-            "Exploratory Data Analysis",
+            "Medical Dataset Collection",
+            "Data Preprocessing",
             "Feature Engineering",
-            "Model Training",
-            "Prediction"
+            "CNN Model Training",
+            "Model Evaluation",
+            "Disease Prediction",
+            "Web Application Integration"
         ],
 
-        outcome: "Successfully developed a predictive model capable of analyzing multiple water quality parameters and assisting in water quality assessment through machine learning techniques.",
+        outcome: "Successfully demonstrated how Convolutional Neural Networks (CNN) and Machine Learning techniques can be applied within an academic research project to support preliminary healthcare diagnosis through an integrated web-based application.",
 
         learnings: [
-            "Environmental Data Analysis",
-            "Machine Learning Pipeline",
-            "Feature Engineering",
-            "Data Visualization",
-            "Predictive Modeling"
+            "Deep Learning",
+            "Convolutional Neural Networks",
+            "Healthcare AI",
+            "Machine Learning",
+            "Model Training & Evaluation",
+            "Research Methodology"
         ],
 
-        github: "YOUR_WATER_QUALITY_GITHUB_LINK"
+        github: "YOUR_HEALTHCARE_GITHUB_LINK"
 
     },
     photography: {
@@ -864,5 +877,33 @@ window.addEventListener("click", function (e) {
         closeCertificate();
 
     }
+
+});
+/*==========================================
+      PROJECT CARD SPOTLIGHT EFFECT
+==========================================*/
+
+const projectCards = document.querySelectorAll(".project-card");
+
+projectCards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        card.style.setProperty("--x", `${x}px`);
+        card.style.setProperty("--y", `${y}px`);
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.setProperty("--x", "50%");
+        card.style.setProperty("--y", "50%");
+
+    });
 
 });

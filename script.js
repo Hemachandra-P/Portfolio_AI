@@ -700,7 +700,7 @@ const projects = {
     },
     geniAIQA: {
 
-    title: "Geni AI QA System",
+    title: "ORVEN Geni AI QA System",
 
     overview: "An enterprise AI Quality Assurance platform designed to streamline AI governance, model evaluation, Retrieval-Augmented Generation (RAG), and intelligent document interactions through a secure and scalable architecture.",
 

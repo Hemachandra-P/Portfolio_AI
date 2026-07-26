@@ -698,53 +698,70 @@ const projects = {
         github: "YOUR_PHOTOGRAPHY_GITHUB_LINK"
 
     },
-    passwordValidator: {
+    geniAIQA: {
 
-        title: "Password Strength Validator",
+    title: "Geni AI QA System",
 
-        overview: "A security-focused web application that evaluates password strength based on multiple security criteria and provides instant feedback to encourage stronger password creation.",
+    overview: "An enterprise AI Quality Assurance platform designed to streamline AI governance, model evaluation, Retrieval-Augmented Generation (RAG), and intelligent document interactions through a secure and scalable architecture.",
 
-        problem: "Weak passwords remain one of the leading causes of unauthorized account access and cybersecurity breaches.",
+    problem: "Organizations require a centralized platform to govern AI systems, evaluate model performance, manage AI assets, and securely interact with enterprise knowledge while ensuring responsible AI practices.",
 
-        solution: "Developed an interactive password validation tool that analyzes password characteristics such as length, complexity, and character diversity while providing real-time strength feedback.",
+    solution: "Developed a full-stack AI QA platform that integrates AI governance, document-based RAG, semantic search, AI model evaluation, analytics dashboards, and secure authentication into a unified enterprise solution.",
 
-        features: [
-            "Real-Time Password Analysis",
-            "Strength Indicator",
-            "Security Rule Validation",
-            "Instant Feedback",
-            "Interactive User Interface"
-        ],
+    features: [
+        "AI Governance Dashboard",
+        "AI Asset Management",
+        "Document Upload & Knowledge Base",
+        "RAG-Powered AI Chat",
+        "AI Model Evaluation",
+        "Analytics Dashboard",
+        "JWT Authentication",
+        "Semantic Search with pgvector",
+        "RESTful API Integration",
+        "Cloud Deployment"
+    ],
 
-        technologies: [
-            "HTML",
-            "CSS",
-            "JavaScript"
-        ],
+    technologies: [
+        "React",
+        "Tailwind CSS",
+        "FastAPI",
+        "Python",
+        "PostgreSQL",
+        "pgvector",
+        "OpenAI API",
+        "SQLAlchemy",
+        "JWT Authentication",
+        "Render",
+        "Vercel"
+    ],
 
-        workflow: [
-            "Password Input",
-            "Rule Validation",
-            "Strength Analysis",
-            "Feedback Generation",
-            "Result Display"
-        ],
+    workflow: [
+        "User Authentication",
+        "Document Upload",
+        "Embedding Generation",
+        "Vector Storage (pgvector)",
+        "Semantic Retrieval",
+        "AI Response Generation",
+        "Model Evaluation",
+        "Analytics & Governance"
+    ],
 
-        outcome: "Successfully developed a password validation tool that promotes secure password creation by providing immediate strength analysis and actionable feedback.",
+    outcome: "Successfully built and deployed an enterprise AI Quality Assurance platform that combines AI governance, Retrieval-Augmented Generation (RAG), model evaluation, and analytics into a scalable cloud-based application.",
 
-        learnings: [
-            "Frontend Development",
-            "JavaScript Logic",
-            "Cybersecurity Fundamentals",
-            "Form Validation",
-            "User Experience Design"
-        ],
+    learnings: [
+        "Enterprise AI Architecture",
+        "Retrieval-Augmented Generation (RAG)",
+        "Vector Databases (pgvector)",
+        "FastAPI Backend Development",
+        "React & Tailwind CSS",
+        "JWT Authentication",
+        "Cloud Deployment",
+        "AI Governance & Evaluation"
+    ],
 
-        github: "YOUR_PASSWORD_VALIDATOR_GITHUB_LINK"
+    github: "YOUR_GITHUB_REPOSITORY_LINK"
 
-    },
-
-};
+},
 
 function openProject(project) {
 

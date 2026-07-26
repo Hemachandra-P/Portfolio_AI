@@ -717,23 +717,24 @@ const projects = {
         "Analytics Dashboard",
         "JWT Authentication",
         "Semantic Search with pgvector",
-        "RESTful API Integration",
-        "Cloud Deployment"
+        "RESTful API Integration"
     ],
 
-    technologies: [
-        "React",
-        "Tailwind CSS",
-        "FastAPI",
-        "Python",
-        "PostgreSQL",
-        "pgvector",
-        "OpenAI API",
-        "SQLAlchemy",
-        "JWT Authentication",
-        "Render",
-        "Vercel"
-    ],
+   technologies: [
+    "React",
+    "Tailwind CSS",
+    "FastAPI",
+    "Python",
+    "PostgreSQL",
+    "pgvector",
+    "OpenAI API",
+    "Large Language Models (LLMs)",
+    "Retrieval-Augmented Generation (RAG)",
+    "SQLAlchemy",
+    "JWT Authentication",
+    "Render",
+    "Vercel"
+],
 
     workflow: [
         "User Authentication",

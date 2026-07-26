@@ -761,7 +761,7 @@ const projects = {
 
     github: "YOUR_GITHUB_REPOSITORY_LINK"
 
-},
+};
 
 function openProject(project) {
 

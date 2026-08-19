@@ -188,9 +188,13 @@ Thank you for respecting the work and effort that went into creating this code. 
     </div>
     <!-- ================= END BOOT SCREEN ================= -->
     <!-- =============== END BOOT SCREEN ================= -->
-    <div class="background-animation"></div>
-    <div class="floating-elements" id="floatingElements"></div>
-    <div class="floating-particles" id="floatingParticles"></div>
+    <!-- ================= SOLAR SYSTEM BACKGROUND ================= -->
+    <div class="space-bg" aria-hidden="true">
+        <canvas id="starCanvas"></canvas>
+        <div class="solar-system" id="solarSystem">
+            <div class="sun"></div>
+        </div>
+    </div>
     <nav id="mainNav">
         <div class="container nav-container">
             <a href="#" class="logo">Hemachandra</a>
@@ -252,31 +256,6 @@ Thank you for respecting the work and effort that went into creating this code. 
     </nav>
 
     <section id="home" class="hero">
-        <div class="ai-nodes">
-
-            <span class="node n1"></span>
-            <span class="node n2"></span>
-            <span class="node n3"></span>
-            <span class="node n4"></span>
-            <span class="node n5"></span>
-            <span class="node n6"></span>
-            <span class="node n7"></span>
-            <span class="node n8"></span>
-            <span class="node n9"></span>
-            <span class="node n10"></span>
-
-        </div>
-        <div class="ai-lines">
-
-            <span class="ai-line l1"></span>
-            <span class="ai-line l2"></span>
-            <span class="ai-line l3"></span>
-            <span class="ai-line l4"></span>
-            <span class="ai-line l5"></span>
-            <span class="ai-line l6"></span>
-
-        </div>
-
         <div class="container">
 
             <div class="hero-content">
@@ -397,8 +376,8 @@ Thank you for respecting the work and effort that went into creating this code. 
                     <h3 class="card-title">Bachelor of Technology in Computer Science Engineering</h3>
                     <p>I have completed my B.Tech coursework in Computer Science Engineering at SRM Institute of Science
                         and Technology with 8.39 CGPA. My graduation is complete, and I have developed a strong
-foundation in
-software development, AI, and machine learning.</p>
+                        foundation in
+                        software development, AI, and machine learning.</p>
                     <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
                         <div style="width: 10px; height: 10px; background: var(--accent); border-radius: 50%;"></div>
                         <span>Status: <strong>Graduated — 2026</strong></span>
@@ -410,7 +389,8 @@ software development, AI, and machine learning.</p>
                         <i class="fas fa-laptop-code"></i>
                     </div>
                     <h3 class="card-title">AI Governance Engineer</h3>
-                    <p>Currently working at Zytra Tech Solutions Pvt. Ltd., contributing to AI Governance through AI asset management, AI risk assessment, 
+                    <p>Currently working at Zytra Tech Solutions Pvt. Ltd., contributing to AI Governance through AI
+                        asset management, AI risk assessment,
                         governance workflows, model evaluation, compliance, and responsible AI initiatives.</p>
                     <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
                         <div style="width: 10px; height: 10px; background: var(--primary); border-radius: 50%;"></div>
@@ -475,7 +455,8 @@ software development, AI, and machine learning.</p>
                     <div class="timeline-year">2026</div>
                     <div class="timeline-content">
                         <h3 style="margin-bottom: 10px; color: white;">AI Governance Engineer</h3>
-                        <p>Currently working at Zytra Tech Solutions, contributing to AI Governance through AI asset management, 
+                        <p>Currently working at Zytra Tech Solutions, contributing to AI Governance through AI asset
+                            management,
                             AI risk assessment, governance workflows, compliance, and model evaluation.</p>
                     </div>
                 </div>
@@ -552,7 +533,8 @@ software development, AI, and machine learning.</p>
                         <p>
                             Built an enterprise AI Quality Assurance platform that enables AI governance, model
                             evaluation,
-                            Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), intelligent document chat, analytics dashboards, and
+                            Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), intelligent document
+                            chat, analytics dashboards, and
                             secure
                             AI asset management. Developed with React, FastAPI, PostgreSQL, pgvector, and OpenAI APIs,
                             featuring cloud deployment using Render and Vercel.
@@ -570,10 +552,10 @@ software development, AI, and machine learning.</p>
                         </div>
 
                         <div class="project-footer">
-                            
+
                             <span class="badge">
-    ⚡ AI Quality Assurance
-</span>
+                                ⚡ AI Quality Assurance
+                            </span>
 
                             <div class="project-actions">
 
@@ -583,9 +565,9 @@ software development, AI, and machine learning.</p>
                                     <i class="fab fa-github"></i>
 
                                 </a>
-                                 <a href="https://orven-platform.vercel.app/" target="_blank" class="project-demo">
-    <i class="fas fa-up-right-from-square"></i>
-</a>
+                                <a href="https://orven-platform.vercel.app/" target="_blank" class="project-demo">
+                                    <i class="fas fa-up-right-from-square"></i>
+                                </a>
 
                                 <button class="project-details" onclick="openProject('geniAIQA')">
                                     <i class="fas fa-circle-info"></i>
@@ -673,9 +655,10 @@ software development, AI, and machine learning.</p>
                                     <i class="fab fa-github"></i>
 
                                 </a>
-                                <a href="https://android-malware-detection-using-static-ruxt.onrender.com/" target="_blank" class="project-demo">
-    <i class="fas fa-up-right-from-square"></i>
-</a>
+                                <a href="https://android-malware-detection-using-static-ruxt.onrender.com/"
+                                    target="_blank" class="project-demo">
+                                    <i class="fas fa-up-right-from-square"></i>
+                                </a>
 
                                 <button class="project-details" onclick="openProject('malware')">
 
@@ -848,9 +831,10 @@ software development, AI, and machine learning.</p>
                                     <i class="fab fa-github"></i>
 
                                 </a>
-                                <a href="https://water-probability-prediction-system-mft5.onrender.com/" target="_blank" class="project-demo">
-    <i class="fas fa-up-right-from-square"></i>
-</a>
+                                <a href="https://water-probability-prediction-system-mft5.onrender.com/" target="_blank"
+                                    class="project-demo">
+                                    <i class="fas fa-up-right-from-square"></i>
+                                </a>
 
                                 <button class="project-details" onclick="openProject('waterQuality')">
                                     <i class="fas fa-circle-info"></i>
@@ -936,9 +920,10 @@ software development, AI, and machine learning.</p>
                                     <i class="fab fa-github"></i>
 
                                 </a>
-                                <a href="https://web-based-health-diagnosis-system-rohan.onrender.com/" target="_blank" class="project-demo">
-    <i class="fas fa-up-right-from-square"></i>
-</a>
+                                <a href="https://web-based-health-diagnosis-system-rohan.onrender.com/" target="_blank"
+                                    class="project-demo">
+                                    <i class="fas fa-up-right-from-square"></i>
+                                </a>
 
                                 <button class="project-details" onclick="openProject('healthDiagnosis')">
                                     <i class="fas fa-circle-info"></i>
@@ -1024,9 +1009,10 @@ software development, AI, and machine learning.</p>
                                     <i class="fab fa-github"></i>
 
                                 </a>
-                                <a href="https://photography-website-0cy8.onrender.com" target="_blank" class="project-demo">
-    <i class="fas fa-up-right-from-square"></i>
-</a>
+                                <a href="https://photography-website-0cy8.onrender.com" target="_blank"
+                                    class="project-demo">
+                                    <i class="fas fa-up-right-from-square"></i>
+                                </a>
 
                                 <button class="project-details" onclick="openProject('photography')">
                                     <i class="fas fa-circle-info"></i>
@@ -1534,16 +1520,16 @@ software development, AI, and machine learning.</p>
     <footer>
         <div class="container">
             <div class="footer-content">
-              <div>
-    <h2 class="footer-logo">
-        <a href="https://www.youtube.com/@WeRdevelopers">
-            Hemachandra
-        </a>
-    </h2>
-    <p style="color: var(--gray);">AI Engineer | Operations & Technology Intern | Machine Learning | AI
-        Governance</p>
+                <div>
+                    <h2 class="footer-logo">
+                        <a href="https://www.youtube.com/@WeRdevelopers">
+                            Hemachandra
+                        </a>
+                    </h2>
+                    <p style="color: var(--gray);">AI Engineer | Operations & Technology Intern | Machine Learning | AI
+                        Governance</p>
 
-    <a href="https://orven-platform.vercel.app/" target="_blank" style="
+                    <a href="https://orven-platform.vercel.app/" target="_blank" style="
         display:inline-flex;
         align-items:center;
         gap:8px;
@@ -1557,11 +1543,12 @@ software development, AI, and machine learning.</p>
         font-weight:600;
         text-decoration:none;
         transition:all 0.3s ease;
-    " onmouseover="this.style.background='rgba(124,92,255,0.25)'" onmouseout="this.style.background='rgba(124,92,255,0.12)'">
-        <i class="fas fa-rocket"></i>
-        My Product — ORVEN AI Governance Platform
-    </a>
-</div>
+    " onmouseover="this.style.background='rgba(124,92,255,0.25)'"
+                        onmouseout="this.style.background='rgba(124,92,255,0.12)'">
+                        <i class="fas fa-rocket"></i>
+                        My Product — ORVEN AI Governance Platform
+                    </a>
+                </div>
                 <div class="social-links">
                     <a href="https://github.com/Hemachandra-P" target="_blank" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>

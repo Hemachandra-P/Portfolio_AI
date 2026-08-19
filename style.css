@@ -90,34 +90,265 @@ body {
     }
 }
 
-.background-animation {
+/* ==========================================================
+   SOLAR SYSTEM BACKGROUND
+   Replaces the previous portfolio background layers.
+   ========================================================== */
+.space-bg {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
-}
-
-.floating-elements {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: -1;
     overflow: hidden;
+    pointer-events: none;
+    background: #000000;
 }
 
-.floating-element {
+#starCanvas {
     position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.solar-system {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    width: 0;
+    height: 0;
+}
+
+.solar-system .sun {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 92px;
+    height: 92px;
+    margin: -46px 0 0 -46px;
     border-radius: 50%;
-    background: var(--gradient-1);
-    opacity: 0.05;
-    filter: blur(40px);
+    background:
+        radial-gradient(circle at 34% 30%, #fff8c9 0%, #ffe56b 12%, transparent 28%),
+        radial-gradient(circle at 44% 44%, #ffd34f 0%, #ff9d24 34%, #f35a12 66%, #8f1807 88%, #3b0704 100%);
+    box-shadow:
+        0 0 18px 5px rgba(255, 184, 56, .95),
+        0 0 42px 16px rgba(255, 125, 24, .62),
+        0 0 95px 38px rgba(255, 88, 18, .28),
+        0 0 170px 72px rgba(255, 55, 10, .12);
+    filter: saturate(1.2);
+    z-index: 3;
+}
+
+.solar-system .sun::before {
+    content: '';
+    position: absolute;
+    inset: 5%;
+    border-radius: 50%;
+    background:
+        repeating-conic-gradient(from 15deg, rgba(255,255,255,.16) 0deg 4deg, transparent 4deg 13deg),
+        radial-gradient(circle at 55% 58%, transparent 0 38%, rgba(130,20,0,.28) 70%, rgba(50,0,0,.52) 100%);
+    mix-blend-mode: screen;
+    opacity: .55;
+    animation: sunSurface 8s linear infinite;
+}
+
+.solar-system .sun::after {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, transparent 55%, rgba(255,173,50,.16) 66%, rgba(255,90,15,.10) 76%, transparent 82%);
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.solar-system .solar-orbit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: solarSpin linear infinite;
+}
+
+.solar-system .solar-planet {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: solarSpinReverse linear infinite;
+    overflow: visible;
+    isolation: isolate;
+    border: 1px solid rgba(255,255,255,.12);
+    box-shadow:
+        inset -5px -5px 9px rgba(0,0,0,.78),
+        inset 2px 2px 5px rgba(255,255,255,.28),
+        0 0 14px rgba(255,255,255,.10);
+    filter: saturate(1.12) contrast(1.12);
+}
+
+.solar-planet::before,
+.solar-planet::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.solar-planet::before {
+    z-index: 1;
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.60) 0 5%, rgba(255,255,255,.12) 18%, transparent 42%);
+    mix-blend-mode: screen;
+}
+
+.solar-planet::after {
+    z-index: 2;
+    background: radial-gradient(circle at 70% 73%, transparent 28%, rgba(0,0,0,.20) 57%, rgba(0,0,0,.78) 100%);
+}
+
+/* Mercury */
+.planet-mercury {
+    background:
+        radial-gradient(circle at 22% 62%, rgba(255,255,255,.18) 0 3%, transparent 4%),
+        radial-gradient(circle at 65% 28%, rgba(0,0,0,.28) 0 7%, transparent 8%),
+        radial-gradient(circle at 48% 72%, rgba(0,0,0,.20) 0 5%, transparent 6%),
+        radial-gradient(circle at 35% 35%, #e7e2d5 0%, #9d9b94 45%, #55575b 76%, #202329 100%);
+}
+
+/* Earth */
+.planet-earth {
+    background:
+        radial-gradient(ellipse at 35% 42%, #d8df87 0 7%, transparent 8%),
+        radial-gradient(ellipse at 58% 30%, #6eaa4d 0 9%, transparent 10%),
+        radial-gradient(ellipse at 63% 65%, #8eb65b 0 8%, transparent 9%),
+        radial-gradient(ellipse at 28% 70%, #507f42 0 7%, transparent 8%),
+        radial-gradient(circle at 35% 30%, #62c6ef 0%, #1675b8 43%, #063d78 72%, #011c3d 100%);
+}
+
+/* Mars */
+.planet-mars {
+    background:
+        radial-gradient(circle at 30% 63%, rgba(54,20,10,.55) 0 5%, transparent 6%),
+        radial-gradient(circle at 66% 38%, rgba(85,30,18,.5) 0 7%, transparent 8%),
+        radial-gradient(circle at 52% 74%, rgba(255,180,130,.20) 0 5%, transparent 6%),
+        radial-gradient(circle at 32% 30%, #e89567 0%, #b94f32 48%, #76251d 78%, #2e0c0b 100%);
+}
+
+/* Jupiter */
+.planet-jupiter {
+    background:
+        radial-gradient(ellipse at 57% 56%, rgba(112,54,35,.55) 0 8%, transparent 9%),
+        repeating-linear-gradient(
+            0deg,
+            #e9d5ae 0 8%,
+            #b98562 8% 15%,
+            #f1dfbc 15% 22%,
+            #9c684f 22% 29%,
+            #ead2aa 29% 39%,
+            #a96f50 39% 48%,
+            #ead8b5 48% 59%,
+            #b77d5e 59% 69%,
+            #f0dfbe 69% 81%,
+            #8e5b48 81% 90%,
+            #d8bb94 90% 100%
+        );
+}
+
+/* Saturn */
+.planet-saturn {
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #f0d7a3 0 12%,
+            #c59c6a 12% 21%,
+            #ead0a0 21% 32%,
+            #aa8057 32% 42%,
+            #edd5a7 42% 56%,
+            #b58b5d 56% 67%,
+            #e8cfa0 67% 81%,
+            #a67a53 81% 90%,
+            #e6c999 90% 100%
+        );
+}
+
+/* Saturn ring: a separate sibling behind the planet. */
+.planet-saturn {
+    z-index: 2;
+}
+
+.saturn-ring {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 86px;
+    height: 31px;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at center,
+            transparent 0 25%,
+            rgba(70,52,35,.92) 26% 29%,
+            rgba(229,207,165,.98) 30% 34%,
+            rgba(128,98,63,.92) 35% 37%,
+            rgba(247,226,185,.98) 38% 42%,
+            rgba(145,112,72,.88) 43% 45%,
+            rgba(231,208,167,.92) 46% 50%,
+            rgba(104,78,51,.76) 51% 53%,
+            transparent 54% 100%);
+    box-shadow:
+        0 0 5px rgba(255,235,190,.65),
+        0 0 12px rgba(255,215,155,.22);
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,.5));
+}
+
+/* Saturn's normal highlight/shadow remains on the sphere; the ring is no longer
+   generated by a planet pseudo-element, so it cannot sit over the planet. */
+.planet-saturn::before {
+    z-index: 1;
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.48) 0 5%, rgba(255,255,255,.10) 18%, transparent 42%);
+    mix-blend-mode: screen;
+}
+
+.planet-saturn::after {
+    z-index: 2;
+    background: radial-gradient(circle at 70% 73%, transparent 28%, rgba(0,0,0,.20) 57%, rgba(0,0,0,.78) 100%);
+}
+
+@keyframes sunSurface {
+    from { transform: rotate(0deg) scale(1.01); }
+    to { transform: rotate(360deg) scale(1.01); }
+}
+
+@keyframes solarSpin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes solarSpinReverse {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@media (max-width: 768px) {
+    .solar-system { top: 58%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .solar-system .solar-orbit,
+    .solar-system .solar-planet {
+        animation: none;
+    }
+}
+
+/* The old decorative background layers are no longer used. */
+.background-animation,
+.floating-elements,
+.floating-particles {
+    display: none !important;
 }
 
 .container {
@@ -397,29 +628,11 @@ nav.scrolled {
    AI GRID BACKGROUND
 ========================================== */
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-
-    background:
-        linear-gradient(rgba(124, 92, 255, .08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(124, 92, 255, .08) 1px, transparent 1px);
-
-    background-size: 40px 40px;
-
-    animation: gridMove 18s linear infinite;
-
-    will-change: transform;
-    transform: translateZ(0);
-    pointer-events: none;
-}
-
-.hero::after {
-    filter: blur(18px);
-    animation: floatGlow 20s ease-in-out infinite;
-    opacity: .85;
+.hero::before,
+.hero::after,
+.ai-lines,
+.ai-nodes {
+    display: none !important;
 }
 
 .hero-content {
@@ -483,6 +696,7 @@ nav.scrolled {
 =========================================*/
 
 .ai-nodes {
+    display: none !important;
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -632,6 +846,7 @@ nav.scrolled {
 =========================================*/
 
 .ai-lines {
+    display: none !important;
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -3481,22 +3696,8 @@ html {
 
 }
 
-.loader-finished * {
+.loader-finished #bootScreen * {
     animation-play-state: paused !important;
-}
-
-/* TEMP TEST */
-
-.radar,
-.hud-ring,
-.orbit,
-.hud-circle::before,
-.hud-circle::after {
-    animation: none !important;
-}
-
-.orbit {
-    display: none !important;
 }
 
 /* =========================
@@ -4642,6 +4843,7 @@ html {
     color: inherit;
 
 }
+
 .project-demo {
     width: 42px;
     height: 42px;

@@ -3,75 +3,109 @@
 // Please do not remove or alter the credit to the original creator. If you wish to use this code for personal or commercial purposes, kindly contact the creator for permissions.
 // Thank you for respecting the work and effort that went into creating this code.
 
-const floatingElements = document.getElementById('floatingElements');
-for (let i = 0; i < 15; i++) {
-    const element = document.createElement('div');
-    element.classList.add('floating-element');
-    const size = Math.random() * 200 + 50;
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    const duration = Math.random() * 20 + 20;
+/* ==========================================================
+   SOLAR SYSTEM BACKGROUND
+   Stars + orbiting planets from the supplied demo.
+   ========================================================== */
+const canvas = document.getElementById('starCanvas');
+const ctx = canvas ? canvas.getContext('2d') : null;
+let stars = [];
+const STAR_COUNT = 220;
 
-    element.style.width = `${size}px`;
-    element.style.height = `${size}px`;
-    element.style.left = `${x}%`;
-    element.style.top = `${y}%`;
-    element.style.animation = `float ${duration}s infinite ease-in-out`;
+function resizeSolarBackground() {
+    if (!canvas || !ctx) return;
 
-    floatingElements.appendChild(element);
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    stars = Array.from({ length: STAR_COUNT }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.4 + 0.3,
+        baseAlpha: Math.random() * 0.55 + 0.25,
+        twinkleSpeed: Math.random() * 0.03 + 0.015,
+        phase: Math.random() * Math.PI * 2,
+        driftX: (Math.random() - 0.5) * 0.05,
+        driftY: (Math.random() - 0.5) * 0.05
+    }));
 }
 
-const style = document.createElement('style');
-style.textContent = `
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(20px, -20px) rotate(5deg); }
-            50% { transform: translate(-15px, 10px) rotate(-5deg); }
-            75% { transform: translate(10px, 15px) rotate(3deg); }
-        }
-    `;
-document.head.appendChild(style);
-/* ==========================================
-        FLOATING PARTICLES
-========================================== */
+function drawSolarStars() {
+    if (!canvas || !ctx) return;
 
-const particleContainer = document.getElementById("floatingParticles");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-if (particleContainer) {
+    for (const star of stars) {
+        star.phase += star.twinkleSpeed;
 
-    const colors = [
-        "#7c5cff",
-        "#00e5ff",
-        "#ffffff"
-    ];
+        // Faster twinkling while keeping the clean, non-glowing star style.
+        const twinkle = (Math.sin(star.phase) + 1) / 2;
+        const alpha = star.baseAlpha + Math.sin(star.phase) * 0.38;
 
-    for (let i = 0; i < 25; i++) {
+        star.x += star.driftX;
+        star.y += star.driftY;
 
-        const particle = document.createElement("span");
+        if (star.x < 0) star.x = canvas.width;
+        if (star.x > canvas.width) star.x = 0;
+        if (star.y < 0) star.y = canvas.height;
+        if (star.y > canvas.height) star.y = 0;
 
-        particle.className = "particle";
-
-        const size = Math.random() * 4 + 2;
-
-        particle.style.width = size + "px";
-        particle.style.height = size + "px";
-
-        particle.style.left = Math.random() * 100 + "%";
-
-        particle.style.background =
-            colors[Math.floor(Math.random() * colors.length)];
-
-        particle.style.animationDuration =
-            (15 + Math.random() * 10) + "s";
-
-        particle.style.animationDelay =
-            (-Math.random() * 20) + "s";
-
-        particleContainer.appendChild(particle);
-
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.r * (0.85 + twinkle * 0.3), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${Math.max(0.06, Math.min(1, alpha))})`;
+        ctx.fill();
     }
 
+    requestAnimationFrame(drawSolarStars);
 }
+
+const solarSystem = document.getElementById('solarSystem');
+
+const planetsConfig = [
+    // radius, size, duration, visual class
+    [96,  16, 10, 'planet-mercury'],
+    [150, 20, 17, 'planet-earth'],
+    [210, 19, 25, 'planet-mars'],
+    [275, 31, 36, 'planet-jupiter'],
+    [350, 27, 49, 'planet-saturn']
+];
+
+if (solarSystem) {
+    planetsConfig.forEach(([radius, size, duration, visualClass]) => {
+        const orbit = document.createElement('div');
+        orbit.className = 'solar-orbit';
+        orbit.style.width = radius * 2 + 'px';
+        orbit.style.height = radius * 2 + 'px';
+        orbit.style.animationDuration = duration + 's';
+
+        const delay = -Math.random() * duration;
+        orbit.style.animationDelay = delay + 's';
+
+        // Saturn gets a separate ring element so the ring is truly behind the planet.
+        // Keeping it outside the planet's own stacking context prevents the ring from
+        // appearing painted on top of the sphere.
+        if (visualClass === 'planet-saturn') {
+            const ring = document.createElement('div');
+            ring.className = 'saturn-ring';
+            ring.setAttribute('aria-hidden', 'true');
+            orbit.appendChild(ring);
+        }
+
+        const planet = document.createElement('div');
+        planet.className = `solar-planet ${visualClass}`;
+        planet.style.width = size + 'px';
+        planet.style.height = size + 'px';
+        planet.style.animationDuration = duration + 's';
+        planet.style.animationDelay = delay + 's';
+
+        orbit.appendChild(planet);
+        solarSystem.appendChild(orbit);
+    });
+}
+
+window.addEventListener('resize', resizeSolarBackground);
+resizeSolarBackground();
+if (canvas && ctx) requestAnimationFrame(drawSolarStars);
 
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const mobileNav = document.getElementById('mobileNav');
@@ -700,67 +734,67 @@ const projects = {
     },
     geniAIQA: {
 
-    title: "ORVEN Geni AI QA System",
+        title: "ORVEN Geni AI QA System",
 
-    overview: "An enterprise AI Quality Assurance platform designed to streamline AI governance, model evaluation, Retrieval-Augmented Generation (RAG), and intelligent document interactions through a secure and scalable architecture.",
+        overview: "An enterprise AI Quality Assurance platform designed to streamline AI governance, model evaluation, Retrieval-Augmented Generation (RAG), and intelligent document interactions through a secure and scalable architecture.",
 
-    problem: "Organizations require a centralized platform to govern AI systems, evaluate model performance, manage AI assets, and securely interact with enterprise knowledge while ensuring responsible AI practices.",
+        problem: "Organizations require a centralized platform to govern AI systems, evaluate model performance, manage AI assets, and securely interact with enterprise knowledge while ensuring responsible AI practices.",
 
-    solution: "Developed a full-stack AI QA platform that integrates AI governance, document-based RAG, semantic search, AI model evaluation, analytics dashboards, and secure authentication into a unified enterprise solution.",
+        solution: "Developed a full-stack AI QA platform that integrates AI governance, document-based RAG, semantic search, AI model evaluation, analytics dashboards, and secure authentication into a unified enterprise solution.",
 
-    features: [
-        "AI Governance Dashboard",
-        "AI Asset Management",
-        "Document Upload & Knowledge Base",
-        "RAG-Powered AI Chat",
-        "AI Model Evaluation",
-        "Analytics Dashboard",
-        "JWT Authentication",
-        "Semantic Search with pgvector",
-        "RESTful API Integration"
-    ],
+        features: [
+            "AI Governance Dashboard",
+            "AI Asset Management",
+            "Document Upload & Knowledge Base",
+            "RAG-Powered AI Chat",
+            "AI Model Evaluation",
+            "Analytics Dashboard",
+            "JWT Authentication",
+            "Semantic Search with pgvector",
+            "RESTful API Integration"
+        ],
 
-   technologies: [
-    "React",
-    "Tailwind CSS",
-    "FastAPI",
-    "Python",
-    "PostgreSQL",
-    "pgvector",
-    "OpenAI API",
-    "Large Language Models (LLMs)",
-    "Retrieval-Augmented Generation (RAG)",
-    "SQLAlchemy",
-    "JWT Authentication",
-    "Render",
-    "Vercel"
-],
+        technologies: [
+            "React",
+            "Tailwind CSS",
+            "FastAPI",
+            "Python",
+            "PostgreSQL",
+            "pgvector",
+            "OpenAI API",
+            "Large Language Models (LLMs)",
+            "Retrieval-Augmented Generation (RAG)",
+            "SQLAlchemy",
+            "JWT Authentication",
+            "Render",
+            "Vercel"
+        ],
 
-    workflow: [
-        "User Authentication",
-        "Document Upload",
-        "Embedding Generation",
-        "Vector Storage (pgvector)",
-        "Semantic Retrieval",
-        "AI Response Generation",
-        "Model Evaluation",
-        "Analytics & Governance"
-    ],
+        workflow: [
+            "User Authentication",
+            "Document Upload",
+            "Embedding Generation",
+            "Vector Storage (pgvector)",
+            "Semantic Retrieval",
+            "AI Response Generation",
+            "Model Evaluation",
+            "Analytics & Governance"
+        ],
 
-    outcome: "Successfully built and deployed an enterprise AI Quality Assurance platform that combines AI governance, Retrieval-Augmented Generation (RAG), model evaluation, and analytics into a scalable cloud-based application.",
+        outcome: "Successfully built and deployed an enterprise AI Quality Assurance platform that combines AI governance, Retrieval-Augmented Generation (RAG), model evaluation, and analytics into a scalable cloud-based application.",
 
-    learnings: [
-        "Enterprise AI Architecture",
-        "Retrieval-Augmented Generation (RAG)",
-        "Vector Databases (pgvector)",
-        "FastAPI Backend Development",
-        "React & Tailwind CSS",
-        "JWT Authentication",
-        "Cloud Deployment",
-        "AI Governance & Evaluation"
-    ],
+        learnings: [
+            "Enterprise AI Architecture",
+            "Retrieval-Augmented Generation (RAG)",
+            "Vector Databases (pgvector)",
+            "FastAPI Backend Development",
+            "React & Tailwind CSS",
+            "JWT Authentication",
+            "Cloud Deployment",
+            "AI Governance & Evaluation"
+        ],
 
-    github: "https://github.com/Hemachandra-P/ORVEN-platform"
+        github: "https://github.com/Hemachandra-P/ORVEN-platform"
     }
 
 };

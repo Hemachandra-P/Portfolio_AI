@@ -524,6 +524,62 @@ const projects = {
         github: "https://github.com/Hemachandra-P/Android-malware-Detection-using-Static-and-Dynamic-Analysis"
 
     },
+    orvenChatbot: {
+
+        title: "ORVEN AI Chatbot",
+
+        overview: "A full-stack AI workspace built for intelligent conversations, research, coding, image generation, web exploration, memory, and everyday productivity.",
+
+        problem: "AI tools are often fragmented across separate interfaces for chat, research, coding, image generation, and productivity. ORVEN brings these workflows together in one interactive workspace.",
+
+        solution: "Developed a modern Next.js AI workspace powered by Cloudflare Workers AI, with tool-based workflows, web research, image generation, memory, usage tracking, voice input, and an interactive 3D robot experience.",
+
+        features: [
+            "General AI Conversations",
+            "Web Search & Page Browsing",
+            "AI Image Generation",
+            "Image Understanding",
+            "Code Generation & Review",
+            "AI Memory",
+            "Voice Input",
+            "Interactive 3D Robot"
+        ],
+
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Cloudflare Workers AI",
+            "Cloudflare KV",
+            "Three.js",
+            "OpenNext"
+        ],
+
+        workflow: [
+            "User Prompt",
+            "Intent & Tool Selection",
+            "AI Model Processing",
+            "Tool Execution",
+            "Response Generation",
+            "Memory & Usage Tracking"
+        ],
+
+        outcome: "Successfully built and deployed ORVEN AI as a full-stack AI workspace on Cloudflare Workers, integrating AI inference, tools, memory, usage limits, and an interactive user experience.",
+
+        learnings: [
+            "Full-Stack AI Development",
+            "AI Agent Workflows",
+            "Cloudflare Workers AI",
+            "Next.js API Architecture",
+            "Three.js Interaction",
+            "Cloud Deployment"
+        ],
+
+        github: "https://github.com/Hemachandra-P/ORVEN-AI-CHATBOT",
+        demo: "https://orven-ai.hemachandrajoy176.workers.dev"
+
+    },
+
     fakeNews: {
 
         title: "Fake News Detection Using Machine Learning",

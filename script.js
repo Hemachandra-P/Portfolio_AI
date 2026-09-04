@@ -959,15 +959,49 @@ document.addEventListener("keydown", function (e) {
     }
 
 });
-function openCertificate(image, title) {
+function openCertificate(file, title) {
 
-    document.getElementById("certificateImage").src = image;
+    const viewer = document.getElementById("certificateViewer");
 
     document.getElementById("certificateTitle").textContent = title;
 
+    viewer.innerHTML = "";
+
+    if (file.toLowerCase().endsWith(".pdf")) {
+
+        const iframe = document.createElement("iframe");
+
+        iframe.src = file;
+        iframe.title = title;
+
+        iframe.style.width = "100%";
+        iframe.style.height = "75vh";
+        iframe.style.border = "none";
+        iframe.style.borderRadius = "10px";
+        iframe.style.background = "#ffffff";
+
+        viewer.appendChild(iframe);
+
+    } else {
+
+        const img = document.createElement("img");
+
+        img.src = file;
+        img.alt = title;
+
+        img.style.maxWidth = "100%";
+        img.style.maxHeight = "75vh";
+        img.style.width = "auto";
+        img.style.height = "auto";
+        img.style.display = "block";
+        img.style.margin = "0 auto";
+        img.style.borderRadius = "10px";
+
+        viewer.appendChild(img);
+    }
+
     document.getElementById("certificateModal")
         .classList.add("active");
-
 }
 
 function closeCertificate() {

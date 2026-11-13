@@ -351,11 +351,11 @@ setInterval(() => {
 }, 1000);
 
 const roles = [
-    "AI Engineer",
-    "AI Governance",
-    "Machine Learning",
-    "Information Systems",
-    "Technology & Innovation"
+    "Technology & Management Professional",
+    "Operations & Technology",
+    "AI Governance Enthusiast",
+    "Business & Product Operations",
+    "Technology Strategy & Innovation"
 ];
 
 let roleIndex = 0;
